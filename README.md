@@ -35,8 +35,8 @@ This has not been tested with custom checks. They probably won't work or will ha
 
 This project has only been tested with:
 
-* Elixir v1.6.5
-* Credo v0.9.3
+* Elixir v1.7.3
+* Credo v0.10.1
 
 
 

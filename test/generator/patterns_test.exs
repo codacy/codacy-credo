@@ -54,7 +54,8 @@ defmodule Codacy.Credo.Generator.PatternsTest do
                %{name: "max_length", default: 90},
                %{name: "ignore_definitions", default: true},
                %{name: "ignore_specs", default: false},
-               %{name: "ignore_strings", default: true}
+               %{name: "ignore_strings", default: true},
+               %{name: "ignore_urls", default: true}
              ] == Patterns.check_to_parameters({check, max_length: 90})
     end
 

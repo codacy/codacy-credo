@@ -261,6 +261,13 @@
     "description": "Long `quote` blocks are generally an indication that too much is done inside them."
   },
   {
+    "title": "Refactor Map Into",
+    "timeToFix": 5,
+    "patternId": "refactor_map_into",
+    "parameters": [],
+    "description": "`Enum.into/3` is more efficient than `Enum.map/2 |> Enum.into/2`."
+  },
+  {
     "title": "Refactor Match In Condition",
     "timeToFix": 5,
     "patternId": "refactor_match_in_condition",
@@ -430,20 +437,20 @@
     "patternId": "design_alias_usage",
     "parameters": [
       {
-        "name": "if_nested_deeper_than",
-        "description": "Only raise an issue if a module is nested deeper than this."
-      },
-      {
-        "name": "if_called_more_often_than",
-        "description": "Only raise an issue if a module is called more often than this."
-      },
-      {
         "name": "excluded_namespaces",
         "description": "List of namespaces to be excluded for this check."
       },
       {
         "name": "excluded_lastnames",
         "description": "List of lastnames to be excluded for this check."
+      },
+      {
+        "name": "if_nested_deeper_than",
+        "description": "Only raise an issue if a module is nested deeper than this."
+      },
+      {
+        "name": "if_called_more_often_than",
+        "description": "Only raise an issue if a module is called more often than this."
       }
     ],
     "description": "Functions from other modules should be used via an alias if the module's namespace is not top-level."

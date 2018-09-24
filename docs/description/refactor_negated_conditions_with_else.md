@@ -2,13 +2,13 @@ An `if` block with a negated condition should not contain an else block.
 
 So while this is fine:
 
-    if !allowed? do
+    if not allowed? do
       raise "Not allowed!"
     end
 
 The code in this example ...
 
-    if !allowed? do
+    if not allowed? do
       raise "Not allowed!"
     else
       proceed_as_planned()
@@ -21,6 +21,8 @@ The code in this example ...
     else
       raise "Not allowed!"
     end
+
+The same goes for negation through `!` instead of `not`.
 
 The reason for this is not a technical but a human one. It is easier to wrap
 your head around a positive condition and then thinking "and else we do ...".
