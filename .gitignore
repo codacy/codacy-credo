@@ -25,3 +25,4 @@ codacy_credo-*.tar
 /project/project
 /project/target
 /target
+/.idea

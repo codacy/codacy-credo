@@ -1,5 +1,5 @@
 {
-  "version": "0.9.3",
+  "version": "0.10.1",
   "patterns": [
     {
       "patternId": "consistency_exception_names",
@@ -34,7 +34,12 @@
     },
     {
       "patternId": "consistency_space_in_parentheses",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "allow_empty_enums",
+          "default": false
+        }
+      ],
       "level": "Warning",
       "category": "CodeStyle"
     },
@@ -234,6 +239,12 @@
           "default": false
         }
       ],
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "refactor_map_into",
+      "parameters": [],
       "level": "Warning",
       "category": "CodeStyle"
     },
@@ -501,7 +512,7 @@
       "parameters": [
         {
           "name": "max_length",
-          "default": 80
+          "default": 120
         },
         {
           "name": "ignore_definitions",
@@ -513,6 +524,10 @@
         },
         {
           "name": "ignore_strings",
+          "default": true
+        },
+        {
+          "name": "ignore_urls",
           "default": true
         }
       ],
