@@ -1,5 +1,5 @@
 {
-  "version": "0.10.1",
+  "version": "0.10.2",
   "patterns": [
     {
       "patternId": "consistency_exception_names",
@@ -9,6 +9,12 @@
     },
     {
       "patternId": "consistency_line_endings",
+      "parameters": [],
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "consistency_multi_alias_import_require_use",
       "parameters": [],
       "level": "Warning",
       "category": "CodeStyle"
@@ -45,351 +51,6 @@
     },
     {
       "patternId": "consistency_tabs_or_spaces",
-      "parameters": [],
-      "level": "Warning",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "design_tag_fixme",
-      "parameters": [
-        {
-          "name": "include_doc",
-          "default": true
-        }
-      ],
-      "level": "Warning",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_alias_order",
-      "parameters": [],
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_function_names",
-      "parameters": [],
-      "level": "Warning",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_large_numbers",
-      "parameters": [
-        {
-          "name": "only_greater_than",
-          "default": 9999
-        }
-      ],
-      "level": "Warning",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_module_attribute_names",
-      "parameters": [],
-      "level": "Warning",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_module_doc",
-      "parameters": [
-        {
-          "name": "ignore_names",
-          "default": [
-            "(\\.\\w+Controller|\\.Endpoint|\\.Repo|\\.Router|\\.\\w+Socket|\\.\\w+View)$"
-          ]
-        }
-      ],
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_module_names",
-      "parameters": [],
-      "level": "Warning",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_parentheses_in_condition",
-      "parameters": [],
-      "level": "Warning",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_parentheses_on_zero_arity_defs",
-      "parameters": [],
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_predicate_function_names",
-      "parameters": [],
-      "level": "Warning",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_prefer_implicit_try",
-      "parameters": [],
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_redundant_blank_lines",
-      "parameters": [
-        {
-          "name": "max_blank_lines",
-          "default": 1
-        }
-      ],
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_semicolons",
-      "parameters": [],
-      "level": "Warning",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_space_after_commas",
-      "parameters": [],
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_string_sigils",
-      "parameters": [
-        {
-          "name": "maximum_allowed_quotes",
-          "default": 3
-        }
-      ],
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_trailing_blank_line",
-      "parameters": [],
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_trailing_white_space",
-      "parameters": [
-        {
-          "name": "ignore_strings",
-          "default": true
-        }
-      ],
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "readability_variable_names",
-      "parameters": [],
-      "level": "Warning",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "refactor_cond_statements",
-      "parameters": [],
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "refactor_cyclomatic_complexity",
-      "parameters": [
-        {
-          "name": "max_complexity",
-          "default": 9
-        }
-      ],
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "refactor_double_boolean_negation",
-      "parameters": [],
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "refactor_function_arity",
-      "parameters": [
-        {
-          "name": "max_arity",
-          "default": 8
-        },
-        {
-          "name": "ignore_defp",
-          "default": false
-        }
-      ],
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "refactor_long_quote_blocks",
-      "parameters": [
-        {
-          "name": "max_line_count",
-          "default": 150
-        },
-        {
-          "name": "ignore_comments",
-          "default": false
-        }
-      ],
-      "level": "Warning",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "refactor_map_into",
-      "parameters": [],
-      "level": "Warning",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "refactor_match_in_condition",
-      "parameters": [],
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "refactor_negated_conditions_in_unless",
-      "parameters": [],
-      "level": "Warning",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "refactor_negated_conditions_with_else",
-      "parameters": [],
-      "level": "Warning",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "refactor_nesting",
-      "parameters": [
-        {
-          "name": "max_nesting",
-          "default": 2
-        }
-      ],
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "refactor_unless_with_else",
-      "parameters": [],
-      "level": "Warning",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "warning_bool_operation_on_same_values",
-      "parameters": [],
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "warning_expensive_empty_enum_check",
-      "parameters": [],
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "warning_i_ex_pry",
-      "parameters": [],
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "warning_io_inspect",
-      "parameters": [],
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "warning_lazy_logging",
-      "parameters": [
-        {
-          "name": "ignore",
-          "default": [
-            "error",
-            "warn",
-            "info"
-          ]
-        }
-      ],
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "warning_operation_on_same_values",
-      "parameters": [],
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "warning_operation_with_constant_result",
-      "parameters": [],
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "warning_raise_inside_rescue",
-      "parameters": [],
-      "level": "Info",
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "warning_unused_enum_operation",
-      "parameters": [],
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "warning_unused_file_operation",
-      "parameters": [],
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "warning_unused_keyword_operation",
-      "parameters": [],
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "warning_unused_list_operation",
-      "parameters": [],
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "warning_unused_path_operation",
-      "parameters": [],
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "warning_unused_regex_operation",
-      "parameters": [],
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "warning_unused_string_operation",
-      "parameters": [],
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "warning_unused_tuple_operation",
-      "parameters": [],
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "consistency_multi_alias_import_require_use",
       "parameters": [],
       "level": "Warning",
       "category": "CodeStyle"
@@ -497,6 +158,17 @@
       "category": "CodeStyle"
     },
     {
+      "patternId": "design_tag_fixme",
+      "parameters": [
+        {
+          "name": "include_doc",
+          "default": true
+        }
+      ],
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
       "patternId": "design_tag_todo",
       "parameters": [
         {
@@ -505,6 +177,29 @@
         }
       ],
       "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "readability_alias_order",
+      "parameters": [],
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "readability_function_names",
+      "parameters": [],
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "readability_large_numbers",
+      "parameters": [
+        {
+          "name": "only_greater_than",
+          "default": 9999
+        }
+      ],
+      "level": "Warning",
       "category": "CodeStyle"
     },
     {
@@ -535,9 +230,115 @@
       "category": "CodeStyle"
     },
     {
+      "patternId": "readability_module_attribute_names",
+      "parameters": [],
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "readability_module_doc",
+      "parameters": [
+        {
+          "name": "ignore_names",
+          "default": [
+            "(\\.\\w+Controller|\\.Endpoint|\\.Repo|\\.Router|\\.\\w+Socket|\\.\\w+View)$"
+          ]
+        }
+      ],
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "readability_module_names",
+      "parameters": [],
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "readability_parentheses_in_condition",
+      "parameters": [],
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "readability_parentheses_on_zero_arity_defs",
+      "parameters": [],
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "readability_predicate_function_names",
+      "parameters": [],
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "readability_prefer_implicit_try",
+      "parameters": [],
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "readability_redundant_blank_lines",
+      "parameters": [
+        {
+          "name": "max_blank_lines",
+          "default": 1
+        }
+      ],
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "readability_semicolons",
+      "parameters": [],
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "readability_space_after_commas",
+      "parameters": [],
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
       "patternId": "readability_specs",
       "parameters": [],
       "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "readability_string_sigils",
+      "parameters": [
+        {
+          "name": "maximum_allowed_quotes",
+          "default": 3
+        }
+      ],
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "readability_trailing_blank_line",
+      "parameters": [],
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "readability_trailing_white_space",
+      "parameters": [
+        {
+          "name": "ignore_strings",
+          "default": true
+        }
+      ],
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "readability_variable_names",
+      "parameters": [],
+      "level": "Warning",
       "category": "CodeStyle"
     },
     {
@@ -554,6 +355,94 @@
     {
       "patternId": "refactor_append_single_item",
       "parameters": [],
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "refactor_cond_statements",
+      "parameters": [],
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "refactor_cyclomatic_complexity",
+      "parameters": [
+        {
+          "name": "max_complexity",
+          "default": 9
+        }
+      ],
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "refactor_double_boolean_negation",
+      "parameters": [],
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "refactor_function_arity",
+      "parameters": [
+        {
+          "name": "max_arity",
+          "default": 8
+        },
+        {
+          "name": "ignore_defp",
+          "default": false
+        }
+      ],
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "refactor_long_quote_blocks",
+      "parameters": [
+        {
+          "name": "max_line_count",
+          "default": 150
+        },
+        {
+          "name": "ignore_comments",
+          "default": false
+        }
+      ],
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "refactor_map_into",
+      "parameters": [],
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "refactor_match_in_condition",
+      "parameters": [],
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "refactor_negated_conditions_in_unless",
+      "parameters": [],
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "refactor_negated_conditions_with_else",
+      "parameters": [],
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "refactor_nesting",
+      "parameters": [
+        {
+          "name": "max_nesting",
+          "default": 2
+        }
+      ],
       "level": "Info",
       "category": "CodeStyle"
     },
@@ -578,13 +467,124 @@
       "category": "CodeStyle"
     },
     {
+      "patternId": "refactor_unless_with_else",
+      "parameters": [],
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
       "patternId": "refactor_variable_rebinding",
       "parameters": [],
       "level": "Info",
       "category": "CodeStyle"
     },
     {
+      "patternId": "warning_bool_operation_on_same_values",
+      "parameters": [],
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "warning_expensive_empty_enum_check",
+      "parameters": [],
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "warning_i_ex_pry",
+      "parameters": [],
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "warning_io_inspect",
+      "parameters": [],
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "warning_lazy_logging",
+      "parameters": [
+        {
+          "name": "ignore",
+          "default": [
+            "error",
+            "warn",
+            "info"
+          ]
+        }
+      ],
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
       "patternId": "warning_map_get_unsafe_pass",
+      "parameters": [],
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "warning_operation_on_same_values",
+      "parameters": [],
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "warning_operation_with_constant_result",
+      "parameters": [],
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "warning_raise_inside_rescue",
+      "parameters": [],
+      "level": "Info",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "warning_unused_enum_operation",
+      "parameters": [],
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "warning_unused_file_operation",
+      "parameters": [],
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "warning_unused_keyword_operation",
+      "parameters": [],
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "warning_unused_list_operation",
+      "parameters": [],
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "warning_unused_path_operation",
+      "parameters": [],
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "warning_unused_regex_operation",
+      "parameters": [],
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "warning_unused_string_operation",
+      "parameters": [],
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "warning_unused_tuple_operation",
       "parameters": [],
       "level": "Warning",
       "category": "ErrorProne"
