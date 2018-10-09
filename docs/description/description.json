@@ -14,6 +14,13 @@
     "description": "Windows and *nix systems use different line-endings in files."
   },
   {
+    "title": "Consistency Multi Alias Import Require Use",
+    "timeToFix": 5,
+    "patternId": "consistency_multi_alias_import_require_use",
+    "parameters": [],
+    "description": "When using alias, import, require or use for multiple names from the same namespace, you have two options:"
+  },
+  {
     "title": "Consistency Parameter Pattern Matching",
     "timeToFix": 5,
     "patternId": "consistency_parameter_pattern_matching",
@@ -36,7 +43,12 @@
     "title": "Consistency Space In Parentheses",
     "timeToFix": 5,
     "patternId": "consistency_space_in_parentheses",
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "allow_empty_enums",
+        "description": "Allows [], %{} and similar empty enum values to be used regardless of spacing throughout the codebase."
+      }
+    ],
     "description": "Don't use spaces after `(`, `[`, and `{` or before `}`, `]`, and `)`. This is the **preferred** way, although other styles are possible, as long as it is applied consistently."
   },
   {
@@ -45,6 +57,50 @@
     "patternId": "consistency_tabs_or_spaces",
     "parameters": [],
     "description": "Tabs should be used consistently."
+  },
+  {
+    "title": "Design Alias Usage",
+    "timeToFix": 5,
+    "patternId": "design_alias_usage",
+    "parameters": [
+      {
+        "name": "excluded_namespaces",
+        "description": "List of namespaces to be excluded for this check."
+      },
+      {
+        "name": "excluded_lastnames",
+        "description": "List of lastnames to be excluded for this check."
+      },
+      {
+        "name": "if_nested_deeper_than",
+        "description": "Only raise an issue if a module is nested deeper than this."
+      },
+      {
+        "name": "if_called_more_often_than",
+        "description": "Only raise an issue if a module is called more often than this."
+      }
+    ],
+    "description": "Functions from other modules should be used via an alias if the module's namespace is not top-level."
+  },
+  {
+    "title": "Design Duplicated Code",
+    "timeToFix": 5,
+    "patternId": "design_duplicated_code",
+    "parameters": [
+      {
+        "name": "mass_threshold",
+        "description": "The minimum mass which a part of code has to have to qualify for this check."
+      },
+      {
+        "name": "nodes_threshold",
+        "description": "The number of nodes that need to be found to raise an issue."
+      },
+      {
+        "name": "excluded_macros",
+        "description": "List of macros to be excluded for this check."
+      }
+    ],
+    "description": "Code should not be copy-pasted in a codebase when there is room to abstract the copied functionality in a meaningful way."
   },
   {
     "title": "Design Tag Fixme",
@@ -57,6 +113,18 @@
       }
     ],
     "description": "FIXME comments are used to indicate places where source code needs fixing."
+  },
+  {
+    "title": "Design Tag Todo",
+    "timeToFix": 5,
+    "patternId": "design_tag_todo",
+    "parameters": [
+      {
+        "name": "include_doc",
+        "description": "Set to `true` to also include tags from @doc attributes."
+      }
+    ],
+    "description": "TODO comments are used to remind yourself of source code related things."
   },
   {
     "title": "Readability Alias Order",
@@ -83,6 +151,34 @@
       }
     ],
     "description": "Numbers can contain underscores for readability purposes. These do not affect the value of the number, but can help read large numbers more easily."
+  },
+  {
+    "title": "Readability Max Line Length",
+    "timeToFix": 5,
+    "patternId": "readability_max_line_length",
+    "parameters": [
+      {
+        "name": "max_length",
+        "description": "The maximum number of characters a line may consist of."
+      },
+      {
+        "name": "ignore_definitions",
+        "description": "Set to `true` to ignore lines including function definitions."
+      },
+      {
+        "name": "ignore_specs",
+        "description": "Set to `true` to ignore lines including `@spec`s."
+      },
+      {
+        "name": "ignore_strings",
+        "description": "Set to `true` to ignore lines that are strings or in heredocs."
+      },
+      {
+        "name": "ignore_urls",
+        "description": "Set to `true` to ignore lines that contain urls."
+      }
+    ],
+    "description": "Checks for the length of lines."
   },
   {
     "title": "Readability Module Attribute Names",
@@ -165,6 +261,13 @@
     "description": "You can use white-space after commas to make items of lists, tuples and other enumerations easier to separate from one another."
   },
   {
+    "title": "Readability Specs",
+    "timeToFix": 5,
+    "patternId": "readability_specs",
+    "parameters": [],
+    "description": "Functions, callbacks and macros need typespecs."
+  },
+  {
     "title": "Readability String Sigils",
     "timeToFix": 5,
     "patternId": "readability_string_sigils",
@@ -201,6 +304,25 @@
     "patternId": "readability_variable_names",
     "parameters": [],
     "description": "Variable names are always written in snake_case in Elixir."
+  },
+  {
+    "title": "Refactor Abc Size",
+    "timeToFix": 5,
+    "patternId": "refactor_abc_size",
+    "parameters": [
+      {
+        "name": "max_size",
+        "description": "The maximum ABC size a function should have."
+      }
+    ],
+    "description": "The ABC size describes a metric based on assignments, branches and conditions."
+  },
+  {
+    "title": "Refactor Append Single Item",
+    "timeToFix": 5,
+    "patternId": "refactor_append_single_item",
+    "parameters": [],
+    "description": "When building up large lists, it is faster to prepend than append. Therefore: It is sometimes best to prepend to the list during iteration and call Enum.reverse/1 at the end, as it is quite fast."
   },
   {
     "title": "Refactor Cond Statements",
@@ -301,11 +423,34 @@
     "description": "Code should not be nested more than once inside a function."
   },
   {
+    "title": "Refactor Pipe Chain Start",
+    "timeToFix": 5,
+    "patternId": "refactor_pipe_chain_start",
+    "parameters": [
+      {
+        "name": "excluded_functions",
+        "description": "All functions listed will be ignored."
+      },
+      {
+        "name": "excluded_argument_types",
+        "description": "All pipes with argument types listed will be ignored."
+      }
+    ],
+    "description": "Pipes (`|>`) can become more readable by starting with a \"raw\" value."
+  },
+  {
     "title": "Refactor Unless With Else",
     "timeToFix": 5,
     "patternId": "refactor_unless_with_else",
     "parameters": [],
     "description": "An `unless` block should not contain an else block."
+  },
+  {
+    "title": "Refactor Variable Rebinding",
+    "timeToFix": 5,
+    "patternId": "refactor_variable_rebinding",
+    "parameters": [],
+    "description": "You might want to refrain from rebinding variables."
   },
   {
     "title": "Warning Bool Operation On Same Values",
@@ -346,6 +491,13 @@
       }
     ],
     "description": "Ensures laziness of Logger calls."
+  },
+  {
+    "title": "Warning Map Get Unsafe Pass",
+    "timeToFix": 5,
+    "patternId": "warning_map_get_unsafe_pass",
+    "parameters": [],
+    "description": "`Map.get/2` can lead into runtime errors if the result is passed into a pipe without a proper default value. This happens when the next function in the pipe cannot handle `nil` values correctly."
   },
   {
     "title": "Warning Operation On Same Values",
@@ -423,148 +575,5 @@
     "patternId": "warning_unused_tuple_operation",
     "parameters": [],
     "description": "The result of a call to the Tuple module's functions has to be used."
-  },
-  {
-    "title": "Consistency Multi Alias Import Require Use",
-    "timeToFix": 5,
-    "patternId": "consistency_multi_alias_import_require_use",
-    "parameters": [],
-    "description": "When using alias, import, require or use for multiple names from the same namespace, you have two options:"
-  },
-  {
-    "title": "Design Alias Usage",
-    "timeToFix": 5,
-    "patternId": "design_alias_usage",
-    "parameters": [
-      {
-        "name": "excluded_namespaces",
-        "description": "List of namespaces to be excluded for this check."
-      },
-      {
-        "name": "excluded_lastnames",
-        "description": "List of lastnames to be excluded for this check."
-      },
-      {
-        "name": "if_nested_deeper_than",
-        "description": "Only raise an issue if a module is nested deeper than this."
-      },
-      {
-        "name": "if_called_more_often_than",
-        "description": "Only raise an issue if a module is called more often than this."
-      }
-    ],
-    "description": "Functions from other modules should be used via an alias if the module's namespace is not top-level."
-  },
-  {
-    "title": "Design Duplicated Code",
-    "timeToFix": 5,
-    "patternId": "design_duplicated_code",
-    "parameters": [
-      {
-        "name": "mass_threshold",
-        "description": "The minimum mass which a part of code has to have to qualify for this check."
-      },
-      {
-        "name": "nodes_threshold",
-        "description": "The number of nodes that need to be found to raise an issue."
-      },
-      {
-        "name": "excluded_macros",
-        "description": "List of macros to be excluded for this check."
-      }
-    ],
-    "description": "Code should not be copy-pasted in a codebase when there is room to abstract the copied functionality in a meaningful way."
-  },
-  {
-    "title": "Design Tag Todo",
-    "timeToFix": 5,
-    "patternId": "design_tag_todo",
-    "parameters": [
-      {
-        "name": "include_doc",
-        "description": "Set to `true` to also include tags from @doc attributes."
-      }
-    ],
-    "description": "TODO comments are used to remind yourself of source code related things."
-  },
-  {
-    "title": "Readability Max Line Length",
-    "timeToFix": 5,
-    "patternId": "readability_max_line_length",
-    "parameters": [
-      {
-        "name": "max_length",
-        "description": "The maximum number of characters a line may consist of."
-      },
-      {
-        "name": "ignore_definitions",
-        "description": "Set to `true` to ignore lines including function definitions."
-      },
-      {
-        "name": "ignore_specs",
-        "description": "Set to `true` to ignore lines including `@spec`s."
-      },
-      {
-        "name": "ignore_strings",
-        "description": "Set to `true` to ignore lines that are strings or in heredocs"
-      }
-    ],
-    "description": "Checks for the length of lines."
-  },
-  {
-    "title": "Readability Specs",
-    "timeToFix": 5,
-    "patternId": "readability_specs",
-    "parameters": [],
-    "description": "Functions, callbacks and macros need typespecs."
-  },
-  {
-    "title": "Refactor Abc Size",
-    "timeToFix": 5,
-    "patternId": "refactor_abc_size",
-    "parameters": [
-      {
-        "name": "max_size",
-        "description": "The maximum ABC size a function should have."
-      }
-    ],
-    "description": "The ABC size describes a metric based on assignments, branches and conditions."
-  },
-  {
-    "title": "Refactor Append Single Item",
-    "timeToFix": 5,
-    "patternId": "refactor_append_single_item",
-    "parameters": [],
-    "description": "When building up large lists, it is faster to prepend than append. Therefore: It is sometimes best to prepend to the list during iteration and call Enum.reverse/1 at the end, as it is quite fast."
-  },
-  {
-    "title": "Refactor Pipe Chain Start",
-    "timeToFix": 5,
-    "patternId": "refactor_pipe_chain_start",
-    "parameters": [
-      {
-        "name": "excluded_functions",
-        "description": "All functions listed will be ignored."
-      },
-      {
-        "name": "excluded_argument_types",
-        "description": "All pipes with argument types listed will be ignored."
-      }
-    ],
-    "description": "Pipes (`|>`) can become more readable by starting with a \"raw\" value."
-  },
-  {
-    "title": "Refactor Variable Rebinding",
-    "timeToFix": 5,
-    "patternId": "refactor_variable_rebinding",
-    "parameters": [],
-    "description": "You might want to refrain from rebinding variables."
-  },
-  {
-    "title": "Warning Map Get Unsafe Pass",
-    "timeToFix": 5,
-    "patternId": "warning_map_get_unsafe_pass",
-    "parameters": [],
-    "description": "`Map.get/2` can lead into runtime errors if the result is passed into a pipe without a proper default value. This happens when the next function in the pipe cannot handle `nil` values correctly."
   }
 ]
