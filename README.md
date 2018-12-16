@@ -57,7 +57,7 @@ The Second test suite is the [Codacy Plugin Test](https://github.com/codacy/coda
 ./build.sh codacy/codacy-credo latest
 
 # in codacy-plugins-test
-sbt "run-main codacy.plugins.DockerTest all codacy/codacy-credo:latest"
+sbt "runMain codacy.plugins.DockerTest all codacy/codacy-credo:latest"
 ```
 
 ## Docs
