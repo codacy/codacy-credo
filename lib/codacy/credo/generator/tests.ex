@@ -115,8 +115,8 @@ defmodule Codacy.Credo.Generator.Tests do
   defp start_servers(check) do
     check
     |> put_in_exec()
-    |> Credo.Execution.SourceFiles.start_server()
-    |> Credo.Execution.Issues.start_server()
+    |> Credo.Execution.ExecutionSourceFiles.start_server()
+    |> Credo.Execution.ExecutionIssues.start_server()
 
     check
   end

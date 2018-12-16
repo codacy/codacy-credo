@@ -13,8 +13,14 @@ defmodule Codacy.Credo.Generator.Patterns do
   def load_checks(dir) do
     dir
     |> Credo.ConfigFile.read_or_default()
-    |> Map.get(:checks)
-    |> Enum.sort()
+    |> case do
+      {:ok, config} ->
+        Map.get(config, :checks)
+        |> Enum.sort()
+
+      {:error, errorMsg} ->
+        raise inspect(errorMsg)
+    end
   end
 
   def write_patterns(patterns) do

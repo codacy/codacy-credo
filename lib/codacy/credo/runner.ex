@@ -17,7 +17,7 @@ defmodule Codacy.Credo.Runner do
     {valid_source_files, invalid_source_files} =
       exec
       |> Sources.find()
-      |> Credo.Backports.Enum.split_with(& &1.status === :valid)
+      |> Credo.Backports.Enum.split_with(&(&1.status === :valid))
 
     Output.complain_about_invalid_source_files(invalid_source_files)
 

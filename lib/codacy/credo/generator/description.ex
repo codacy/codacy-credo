@@ -7,7 +7,7 @@ defmodule Codacy.Credo.Generator.Description do
 
   def generate_md() do
     File.cwd!()
-    |> Patterns.load_checks
+    |> Patterns.load_checks()
     |> Enum.map(&elem(&1, 0))
     |> Enum.map(&write_md/1)
   end
@@ -20,7 +20,7 @@ defmodule Codacy.Credo.Generator.Description do
 
   def generate_json() do
     File.cwd!()
-    |> Patterns.load_checks
+    |> Patterns.load_checks()
     |> Enum.map(&elem(&1, 0))
     |> description_json
     |> write_description_json
