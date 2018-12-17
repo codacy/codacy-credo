@@ -1,5 +1,5 @@
 {
-  "version": "0.10.2",
+  "version": "1.0.0",
   "patterns": [
     {
       "patternId": "consistency_exception_names",
@@ -128,14 +128,14 @@
         },
         {
           "name": "if_nested_deeper_than",
-          "default": 0
+          "default": 2
         },
         {
           "name": "if_called_more_often_than",
           "default": 0
         }
       ],
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle"
     },
     {
@@ -347,6 +347,10 @@
         {
           "name": "max_size",
           "default": 30
+        },
+        {
+          "name": "excluded_functions",
+          "default": []
         }
       ],
       "level": "Info",
@@ -539,6 +543,12 @@
       "patternId": "warning_raise_inside_rescue",
       "parameters": [],
       "level": "Info",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "warning_unsafe_to_atom",
+      "parameters": [],
+      "level": "Warning",
       "category": "ErrorProne"
     },
     {

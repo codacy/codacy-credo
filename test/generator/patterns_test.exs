@@ -29,7 +29,7 @@ defmodule Codacy.Credo.Generator.PatternsTest do
       expected = %{
         category: "CodeStyle",
         level: "Info",
-        parameters: [%{default: 30, name: "max_size"}],
+        parameters: [%{default: 30, name: "max_size"}, %{default: [], name: "excluded_functions"}],
         patternId: "refactor_abc_size"
       }
 

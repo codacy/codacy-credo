@@ -313,6 +313,10 @@
       {
         "name": "max_size",
         "description": "The maximum ABC size a function should have."
+      },
+      {
+        "name": "excluded_functions",
+        "description": "All functions listed will be ignored."
       }
     ],
     "description": "The ABC size describes a metric based on assignments, branches and conditions."
@@ -519,6 +523,13 @@
     "patternId": "warning_raise_inside_rescue",
     "parameters": [],
     "description": "Using `Kernel.raise` inside of a `rescue` block creates a new stacktrace, which obscures the cause of the original error."
+  },
+  {
+    "title": "Warning Unsafe To Atom",
+    "timeToFix": 5,
+    "patternId": "warning_unsafe_to_atom",
+    "parameters": [],
+    "description": "Creating atoms from unknown or external sources dynamically is a potentially unsafe operation because atoms are not garbage-collected by the runtime."
   },
   {
     "title": "Warning Unused Enum Operation",
