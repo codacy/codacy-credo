@@ -2,7 +2,7 @@ defmodule Codacy.Credo.ConfigTest do
   alias Codacy.Credo.Config
   use ExUnit.Case
 
-  describe "parse codacy.json" do
+  describe "parse codacyrc" do
     test "Builds included file list from config" do
       example_json = %{
         files: ["lib/app.ex"],
