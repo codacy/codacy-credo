@@ -3,17 +3,15 @@ defmodule Codacy.Credo.Config do
             codacy_config: nil,
             credo_config: %{}
 
-  def codacy_json_exists?(%__MODULE__{path: path}) do
-    path
-    |> Path.join(".codacy.json")
-    |> File.exists?()
+  def codacy_json_exists?() do
+    File.exists?(codacyConfFilePath())
   end
 
   @doc """
   Load & decode .codacy.json
   """
-  def parse_codacy_json(%__MODULE__{path: path} = config) do
-    with {:ok, file} <- File.read(path <> ".codacy.json"),
+  def parse_codacy_json(config) do
+    with {:ok, file} <- File.read(codacyConfFilePath()),
          {:ok, json} <- Poison.decode(file, keys: :atoms!) do
       %__MODULE__{config | codacy_config: json}
     else
@@ -25,7 +23,7 @@ defmodule Codacy.Credo.Config do
   def load_config(path) do
     config = %__MODULE__{path: path}
 
-    case codacy_json_exists?(config) do
+    case codacy_json_exists?() do
       true -> parse_codacy_json(config)
       false -> %__MODULE__{config | codacy_config: :use_default}
     end
@@ -75,6 +73,10 @@ defmodule Codacy.Credo.Config do
 
   def srcPath do
     "/src/"
+  end
+
+  def codacyConfFilePath do
+    "/.codacyrc"
   end
 
   defp transform_pattern_to_check(%{patternId: pattern_id, parameters: parameters}, patterns_map)
