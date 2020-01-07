@@ -1,0 +1,6 @@
+<module name="root">
+    <module name="BeforeExecutionExclusionFileFilter">
+        <!-- Ignore test.ex and .credo.exs -->
+        <property name="fileNamePattern" value="test\.ex|\.credo\.exs" />
+    </module>
+</module>

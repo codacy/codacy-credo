@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<checkstyle version="4.3">
+    <file name="test2.ex">
+        <error source="readability_module_doc" line="1" message="Modules should have a @moduledoc tag." severity="info" />
+    </file>
+</checkstyle>
