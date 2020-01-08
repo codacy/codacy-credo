@@ -1,0 +1,3 @@
+<module name="root">
+    <module name="warning_map_get_unsafe_pass" />
+</module>

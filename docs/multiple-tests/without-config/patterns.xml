@@ -1,0 +1,4 @@
+<module name="root">
+    <module name="design_tag_todo" />
+    <module name="design_tag_fixme" />
+</module>
