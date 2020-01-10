@@ -1,17 +1,15 @@
 version: 2.1
 
 orbs:
-  codacy: codacy/base@1.2.1
-  codacy_plugins_test: codacy/plugins-test@0.7.0
+  codacy: codacy/base@2.0.1
+  codacy_plugins_test: codacy/plugins-test@0.7.1
 
 jobs:
   unit_test:
     docker:  # run the steps with Docker
       - image: circleci/elixir:1.7.3
-    working_directory: ~/workdir
     steps:
-      - attach_workspace:
-          at: ~/
+      - checkout
       - run:
           name: Install Hex locally and fetch copy of rebar
           command: mix do local.hex --force, local.rebar --force
@@ -25,24 +23,6 @@ jobs:
           name: Run tools native tests
           command: mix test
 
-  publish_docker_local:
-    machine: true
-    working_directory: ~/workdir
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run: 
-          name: Publish tool docker locally
-          command: ./build.sh $CIRCLE_PROJECT_REPONAME latest
-      - run:
-          name: Save docker to file
-          command: |
-            docker save --output ~/workdir/docker-image.tar $CIRCLE_PROJECT_REPONAME:latest
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - workdir/docker-image.tar
-
 workflows:
   version: 2
   compile_test_deploy:
@@ -51,7 +31,12 @@ workflows:
       - unit_test:
           requires:
             - codacy/checkout_and_version
-      - publish_docker_local:
+      - codacy/shell:
+          name: publish_docker_local
+          cmd: |
+            ./build.sh $CIRCLE_PROJECT_REPONAME latest
+            docker save --output docker-image.tar $CIRCLE_PROJECT_REPONAME:latest
+          persist_to_workspace: true
           requires:
             - codacy/checkout_and_version
       - codacy_plugins_test/run:
@@ -63,7 +48,7 @@ workflows:
           name: publish_dockerhub
           context: CodacyDocker
           cmd: |
-            docker load --input ~/workdir/docker-image.tar
+            docker load --input docker-image.tar
             docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME:$(cat .version)
             docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME:latest
