@@ -31,7 +31,7 @@ defmodule CodacyCredo.MixProject do
       {:distillery, "2.0.10", runtime: false},
       {:mix_test_watch, "1.0.2", only: :dev, runtime: false},
       {:inch_ex, "2.0.0", only: [:dev, :test]},
-      {:coverex, "1.4.15", only: :test}
+      {:coverex, "1.5.0", only: :test}
     ]
   end
 
