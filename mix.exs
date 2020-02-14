@@ -27,7 +27,7 @@ defmodule CodacyCredo.MixProject do
   defp deps do
     [
       {:credo, "1.0.0"},
-      {:poison, "3.1.0"},
+      {:poison, "4.0.1"},
       {:distillery, "2.0.10", runtime: false},
       {:mix_test_watch, "1.0.2", only: :dev, runtime: false},
       {:inch_ex, "2.0.0", only: [:dev, :test]},
