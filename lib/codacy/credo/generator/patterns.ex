@@ -1,4 +1,8 @@
 defmodule Codacy.Credo.Generator.Patterns do
+  @securityPatterns %{
+    "warning_i_ex_pry" => "CommandInjection"
+  }
+
   @moduledoc """
   Builds patterns.json from checks specified in `Credo.ConfigFile`
   """
@@ -43,12 +47,21 @@ defmodule Codacy.Credo.Generator.Patterns do
   Convert Credo.Check into a valid Patterns Map
   """
   def check_to_pattern(check) do
-    %{
-      patternId: check_pattern_id(check),
+    patternId = check_pattern_id(check)
+    {category, subcategory} = check_to_category(check, patternId)
+
+    pattern = %{
+      patternId: patternId,
       level: check_to_level(check),
-      category: check_to_category(check),
+      category: category,
       parameters: check_to_parameters(check)
     }
+
+    if subcategory != nil do
+      Map.put(pattern, "subcategory", subcategory)
+    else
+      pattern
+    end
   end
 
   def patterns_json(checks) do
@@ -139,13 +152,15 @@ defmodule Codacy.Credo.Generator.Patterns do
   @doc """
   Convert Check Categories into Codacy Categories
   """
-  @spec check_to_category(tuple) :: String.t()
-  def check_to_category(check) do
+  @spec check_to_category(tuple, String) :: tuple
+  def check_to_category(check, patternId) do
     #   ErrorProne, CodeStyle, UnusedCode, Security, Compatibility, Performance, Documentation
 
+    isSecurity = Map.has_key?(@securityPatterns, patternId)
     case elem(check, 0).category do
-      :warning -> "ErrorProne"
-      _ -> "CodeStyle"
+      :warning when isSecurity -> {"Security", @securityPatterns[patternId]}
+      :warning -> {"ErrorProne", nil}
+      _ -> {"CodeStyle", nil}
     end
   end
 

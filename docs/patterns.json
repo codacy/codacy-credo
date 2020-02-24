@@ -495,10 +495,11 @@
       "category": "ErrorProne"
     },
     {
+      "subcategory": "CommandInjection",
       "patternId": "warning_i_ex_pry",
       "parameters": [],
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "Security"
     },
     {
       "patternId": "warning_io_inspect",
