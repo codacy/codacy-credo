@@ -17,7 +17,7 @@ defmodule Codacy.Credo.Generator.Patterns do
   def load_checks(dir) do
     search_dir =
       if !File.exists?(dir) do
-        dir = File.cwd!()
+        File.cwd!()
       else
         dir
       end

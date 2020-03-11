@@ -2,6 +2,6 @@
 <checkstyle version="4.3">
     <file name="test.ex">
         <error source="design_tag_todo" line="5" message="Found a TODO tag in a comment: # TODO: make this do something duh" severity="info" />
-        <error source="design_tag_fixme" line="2" message="Found a FIXME tag in a comment: # FIXME: This should be fixed" severity="warning" />
+        <error source="design_tag_fixme" line="2" message="Found a FIXME tag in a comment: # FIXME: This should be fixed" severity="error" />
     </file>
 </checkstyle>

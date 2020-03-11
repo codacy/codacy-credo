@@ -59,6 +59,13 @@
     "description": "Tabs should be used consistently."
   },
   {
+    "title": "Consistency Unused Variable Names",
+    "timeToFix": 5,
+    "patternId": "consistency_unused_variable_names",
+    "parameters": [],
+    "description": "Elixir allows us to use `_` as a name for variables that are not meant to be used. But it’s a common practice to give these variables meaningful names anyway (`_user` instead of `_`), but some people prefer to name them all `_`."
+  },
+  {
     "title": "Design Alias Usage",
     "timeToFix": 5,
     "patternId": "design_alias_usage",
@@ -127,6 +134,13 @@
     "description": "TODO comments are used to remind yourself of source code related things."
   },
   {
+    "title": "Readability Alias As",
+    "timeToFix": 5,
+    "patternId": "readability_alias_as",
+    "parameters": [],
+    "description": "Aliases which are not completely renamed using the `:as` option are easier to follow."
+  },
+  {
     "title": "Readability Alias Order",
     "timeToFix": 5,
     "patternId": "readability_alias_order",
@@ -138,7 +152,7 @@
     "timeToFix": 5,
     "patternId": "readability_function_names",
     "parameters": [],
-    "description": "Function and macro names are always written in snake_case in Elixir."
+    "description": "Function, macro, and guard names are always written in snake_case in Elixir."
   },
   {
     "title": "Readability Large Numbers",
@@ -157,6 +171,10 @@
     "timeToFix": 5,
     "patternId": "readability_max_line_length",
     "parameters": [
+      {
+        "name": "ignore_heredocs",
+        "description": ""
+      },
       {
         "name": "max_length",
         "description": "The maximum number of characters a line may consist of."
@@ -207,6 +225,13 @@
     "description": "Module names are always written in PascalCase in Elixir."
   },
   {
+    "title": "Readability Multi Alias",
+    "timeToFix": 5,
+    "patternId": "readability_multi_alias",
+    "parameters": [],
+    "description": "Multi alias expansion makes module uses harder to search for in large code bases."
+  },
+  {
     "title": "Readability Parentheses In Condition",
     "timeToFix": 5,
     "patternId": "readability_parentheses_in_condition",
@@ -217,8 +242,13 @@
     "title": "Readability Parentheses On Zero Arity Defs",
     "timeToFix": 5,
     "patternId": "readability_parentheses_on_zero_arity_defs",
-    "parameters": [],
-    "description": "Do not use parentheses when defining a function which has no arguments."
+    "parameters": [
+      {
+        "name": "parens",
+        "description": ""
+      }
+    ],
+    "description": "Either use parentheses or not when defining a function with no arguments."
   },
   {
     "title": "Readability Predicate Function Names",
@@ -254,6 +284,13 @@
     "description": "Don't use ; to separate statements and expressions. Statements and expressions should be separated by lines."
   },
   {
+    "title": "Readability Single Pipe",
+    "timeToFix": 5,
+    "patternId": "readability_single_pipe",
+    "parameters": [],
+    "description": "Pipes (`|>`) should only be used when piping data through multiple calls."
+  },
+  {
     "title": "Readability Space After Commas",
     "timeToFix": 5,
     "patternId": "readability_space_after_commas",
@@ -266,6 +303,13 @@
     "patternId": "readability_specs",
     "parameters": [],
     "description": "Functions, callbacks and macros need typespecs."
+  },
+  {
+    "title": "Readability Strict Module Layout",
+    "timeToFix": 5,
+    "patternId": "readability_strict_module_layout",
+    "parameters": [],
+    "description": "Provide module parts in a required order."
   },
   {
     "title": "Readability String Sigils",
@@ -299,11 +343,25 @@
     "description": "There should be no white-space (i.e. tabs, spaces) at the end of a line."
   },
   {
+    "title": "Readability Unnecessary Alias Expansion",
+    "timeToFix": 5,
+    "patternId": "readability_unnecessary_alias_expansion",
+    "parameters": [],
+    "description": "Alias expansion is useful but when aliasing a single module, it can be harder to read with unnecessary braces."
+  },
+  {
     "title": "Readability Variable Names",
     "timeToFix": 5,
     "patternId": "readability_variable_names",
     "parameters": [],
     "description": "Variable names are always written in snake_case in Elixir."
+  },
+  {
+    "title": "Readability With Custom Tagged Tuple",
+    "timeToFix": 5,
+    "patternId": "readability_with_custom_tagged_tuple",
+    "parameters": [],
+    "description": "Avoid using tags for error reporting."
   },
   {
     "title": "Refactor Abc Size",
@@ -401,11 +459,35 @@
     "description": "Pattern matching should only ever be used for simple assignments inside `if` and `unless` clauses."
   },
   {
+    "title": "Refactor Module Dependencies",
+    "timeToFix": 5,
+    "patternId": "refactor_module_dependencies",
+    "parameters": [
+      {
+        "name": "max_deps",
+        "description": "Maximum number of module dependencies."
+      },
+      {
+        "name": "dependency_namespaces",
+        "description": "List of dependency namespaces to include in this check"
+      },
+      {
+        "name": "excluded_namespaces",
+        "description": "List of namespaces to exclude from this check"
+      },
+      {
+        "name": "excluded_paths",
+        "description": "List of paths or regex to exclude from this check"
+      }
+    ],
+    "description": "This module might be doing too much. Consider limiting the number of module dependencies."
+  },
+  {
     "title": "Refactor Negated Conditions In Unless",
     "timeToFix": 5,
     "patternId": "refactor_negated_conditions_in_unless",
     "parameters": [],
-    "description": "Unless blocks should not contain a negated condition."
+    "description": "Unless blocks should avoid having a negated condition."
   },
   {
     "title": "Refactor Negated Conditions With Else",
@@ -413,6 +495,13 @@
     "patternId": "refactor_negated_conditions_with_else",
     "parameters": [],
     "description": "An `if` block with a negated condition should not contain an else block."
+  },
+  {
+    "title": "Refactor Negated Is Nil",
+    "timeToFix": 5,
+    "patternId": "refactor_negated_is_nil",
+    "parameters": [],
+    "description": "We should avoid negating the `is_nil` predicate function. Here are a couple of examples: The code here ...     def fun(%{external_id: external_id, id: id}) when not is_nil(external_id) do        ...     end"
   },
   {
     "title": "Refactor Nesting",
@@ -457,6 +546,13 @@
     "description": "You might want to refrain from rebinding variables."
   },
   {
+    "title": "Refactor With Clauses",
+    "timeToFix": 5,
+    "patternId": "refactor_with_clauses",
+    "parameters": [],
+    "description": "`with` statements are useful when you need to chain a sequence of pattern matches, stopping at the first one that fails."
+  },
+  {
     "title": "Warning Bool Operation On Same Values",
     "timeToFix": 5,
     "patternId": "warning_bool_operation_on_same_values",
@@ -497,11 +593,30 @@
     "description": "Ensures laziness of Logger calls."
   },
   {
+    "title": "Warning Leaky Environment",
+    "timeToFix": 5,
+    "patternId": "warning_leaky_environment",
+    "parameters": [],
+    "description": "OS child processes inherit the environment of their parent process. This includes sensitive configuration parameters, such as credentials. To minimize the risk of such values leaking, clear or overwrite them when spawning executables."
+  },
+  {
     "title": "Warning Map Get Unsafe Pass",
     "timeToFix": 5,
     "patternId": "warning_map_get_unsafe_pass",
     "parameters": [],
     "description": "`Map.get/2` can lead into runtime errors if the result is passed into a pipe without a proper default value. This happens when the next function in the pipe cannot handle `nil` values correctly."
+  },
+  {
+    "title": "Warning Mix Env",
+    "timeToFix": 5,
+    "patternId": "warning_mix_env",
+    "parameters": [
+      {
+        "name": "excluded_paths",
+        "description": "List of paths or regex to exclude from this check"
+      }
+    ],
+    "description": "From the elixir-lang guide:"
   },
   {
     "title": "Warning Operation On Same Values",
@@ -523,6 +638,13 @@
     "patternId": "warning_raise_inside_rescue",
     "parameters": [],
     "description": "Using `Kernel.raise` inside of a `rescue` block creates a new stacktrace, which obscures the cause of the original error."
+  },
+  {
+    "title": "Warning Unsafe Exec",
+    "timeToFix": 5,
+    "patternId": "warning_unsafe_exec",
+    "parameters": [],
+    "description": "Spawning external commands can lead to command injection vulnerabilities. Use a safe API where arguments are passed as an explicit list, rather than unsafe APIs that run a shell to parse the arguments from a single string."
   },
   {
     "title": "Warning Unsafe To Atom",

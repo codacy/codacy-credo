@@ -17,3 +17,11 @@ or
 
     Module.safe_concat([prefix, infix, suffix])
 
+Jason.decode/Jason.decode! should be called using `keys: :atoms!` (*not* `keys: :atoms`):
+
+    Jason.decode(str, keys: :atoms!)
+
+or `:keys` should be omitted (which defaults to `:strings`):
+
+    Jason.decode(str)
+

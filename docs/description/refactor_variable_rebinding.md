@@ -24,3 +24,12 @@ implementation to be easier to comprehend:
       verified_time
     end
 
+In some rare cases you might really want to rebind a variable.  This can be
+enabled "opt-in" on a per-variable basis by setting the :allow_bang option
+to true and adding a bang suffix sigil to your variable.
+
+    def uses_mutating_parameters(params!) do
+      params! = do_a_thing(params!)
+      params! = do_another_thing(params!)
+      params! = do_yet_another_thing(params!)
+    end

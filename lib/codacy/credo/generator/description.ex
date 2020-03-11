@@ -85,12 +85,35 @@ defmodule Codacy.Credo.Generator.Description do
     [%{name: "maximum_allowed_quotes", description: "The maximum amount of escaped quotes you want to tolerate."}]
   """
   def parameter_descriptions(check) do
-    if check.explanation_for_params != nil do
-      check.explanation_for_params
-      |> Enum.map(&explanation_to_description/1)
+    params_descriptions =
+      if length(check.params_names) > 0 && check.explanation_for_params != nil do
+        check.explanation_for_params
+        |> Enum.map(&explanation_to_description/1)
+      else
+        []
+      end
+
+    if length(check.params_names) > length(params_descriptions) do
+      missing =
+        Enum.filter(check.params_names, fn name ->
+          Enum.find(params_descriptions, nil, fn x ->
+            to_string(x.name) == to_string(name)
+          end) == nil
+        end)
+
+      missing
+      |> Enum.map(&explanation_to_empty_description/1)
+      |> Enum.concat(params_descriptions)
     else
-      []
+      params_descriptions
     end
+  end
+
+  defp explanation_to_empty_description(name) do
+    %{
+      name: name,
+      description: ""
+    }
   end
 
   defp explanation_to_description({name, description}) do
