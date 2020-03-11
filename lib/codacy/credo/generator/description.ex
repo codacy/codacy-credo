@@ -71,7 +71,7 @@ defmodule Codacy.Credo.Generator.Description do
     "Files should end in a trailing blank line."
   """
   def description_of_check(check) do
-    check.explanation
+    check.explanations[:check]
     |> String.split("\n\n")
     |> Enum.at(0)
     |> String.replace("\n", " ")
@@ -85,8 +85,12 @@ defmodule Codacy.Credo.Generator.Description do
     [%{name: "maximum_allowed_quotes", description: "The maximum amount of escaped quotes you want to tolerate."}]
   """
   def parameter_descriptions(check) do
-    check.explanation_for_params
-    |> Enum.map(&explanation_to_description/1)
+    if check.explanation_for_params != nil do
+      check.explanation_for_params
+      |> Enum.map(&explanation_to_description/1)
+    else
+      []
+    end
   end
 
   defp explanation_to_description({name, description}) do

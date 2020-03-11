@@ -6,7 +6,7 @@ defmodule Codacy.Credo.Generator.PatternsTest do
   describe "check_to_pattern/1" do
     test "when just check passed" do
       assert %{
-               level: "Warning",
+               level: "Error",
                patternId: "refactor_long_quote_blocks",
                category: "CodeStyle"
              } = Patterns.check_to_pattern({Credo.Check.Refactor.LongQuoteBlocks})
@@ -53,6 +53,7 @@ defmodule Codacy.Credo.Generator.PatternsTest do
       assert [
                %{name: "max_length", default: 90},
                %{name: "ignore_definitions", default: true},
+               %{name: "ignore_heredocs", default: true},
                %{name: "ignore_specs", default: false},
                %{name: "ignore_strings", default: true},
                %{name: "ignore_urls", default: true}

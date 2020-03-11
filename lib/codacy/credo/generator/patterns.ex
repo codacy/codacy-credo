@@ -15,8 +15,14 @@ defmodule Codacy.Credo.Generator.Patterns do
   end
 
   def load_checks(dir) do
-    dir
-    |> Credo.ConfigFile.read_or_default()
+    search_dir =
+      if !File.exists?(dir) do
+        dir = File.cwd!()
+      else
+        dir
+      end
+
+    Codacy.Credo.Config.config_or_default(search_dir)
     |> case do
       {:ok, config} ->
         Map.get(config, :checks)
@@ -36,8 +42,7 @@ defmodule Codacy.Credo.Generator.Patterns do
   Utility function to get a map of pattern_ids => Check module
   """
   def pattern_id_map do
-    File.cwd!()
-    |> load_checks
+    load_checks(Codacy.Credo.Config.defaultConfigPath())
     |> Enum.map(&elem(&1, 0))
     |> Enum.map(fn check -> {check_pattern_id({check}), check} end)
     |> Map.new()
@@ -116,7 +121,7 @@ defmodule Codacy.Credo.Generator.Patterns do
 
   ## Example
     iex> Codacy.Credo.Generator.Patterns.check_to_level({Credo.Check.Refactor.LongQuoteBlocks})
-    "Warning"
+    "Error"
     iex> Codacy.Credo.Generator.Patterns.check_to_level({Credo.Check.Refactor.LongQuoteBlocks, [priority: :low]})
     "Info"
   """
@@ -157,6 +162,7 @@ defmodule Codacy.Credo.Generator.Patterns do
     #   ErrorProne, CodeStyle, UnusedCode, Security, Compatibility, Performance, Documentation
 
     isSecurity = Map.has_key?(@securityPatterns, patternId)
+
     case elem(check, 0).category do
       :warning when isSecurity -> {"Security", @securityPatterns[patternId]}
       :warning -> {"ErrorProne", nil}

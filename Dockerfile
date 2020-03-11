@@ -1,5 +1,5 @@
 ARG elixir_version
-FROM bitwalker/alpine-elixir:${elixir_version} as builder
+FROM elixir:1.10.1-alpine as builder
 MAINTAINER Codacy <team@codacy.com>
 ENV MIX_ENV=prod
 WORKDIR /tmp/build
@@ -10,7 +10,7 @@ RUN mix deps.get
 RUN mix deps.compile
 RUN mix release
 
-FROM alpine:3.7
+FROM alpine:3.9
 MAINTAINER Codacy <team@codacy.com>
 RUN apk add --update openssl bash && \
     rm -rf /var/cache/*/*
@@ -22,4 +22,5 @@ RUN adduser -u 2004 -D docker
 RUN ["chown", "-R", "docker:docker", "/docs"]
 RUN ["chown", "-R", "docker:docker", "/opt/app"]
 USER docker
-ENTRYPOINT [ "/opt/app/codacy_credo/bin/codacy_credo", "foreground"]
+COPY .credo.default.exs /opt/app/codacy_credo/.credo.exs
+ENTRYPOINT [ "/opt/app/codacy_credo/bin/codacy_credo", "start"]

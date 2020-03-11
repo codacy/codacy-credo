@@ -17,8 +17,8 @@
       #
       # These are the files included in the analysis:
       files: %{
-         included: ["test.ex", "test2.ex"],
-         excluded: []
+        included: ["test.ex", "test2.ex"],
+        excluded: []
       },
       #
       # If you create your own checks, you must specify the source files for
@@ -48,10 +48,10 @@
         # You can also customize the exit_status of each check.
         # If you don't want TODO comments to cause `mix credo` to fail, just
         # set this value to 0 (zero).
-        
+
         ## Design checks
         {Credo.Check.Design.TagTODO, false},
-        {Credo.Check.Design.TagFIXME},
+        {Credo.Check.Design.TagFIXME, []},
         {Credo.Check.Refactor.NegatedConditionsWithElse, false},
         {Credo.Check.Readability.TrailingBlankLine, false}
       ]

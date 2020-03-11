@@ -53,7 +53,7 @@ defmodule Codacy.Credo.ConfigTest do
         ]
       }
 
-      expected_checks = [{Credo.Check.Consistency.ExceptionNames}]
+      expected_checks = [{Credo.Check.Consistency.ExceptionNames, []}]
 
       assert expected_checks ==
                Config.extract_credo_config(%Config{codacy_config: example_json}).credo_config[
@@ -77,7 +77,7 @@ defmodule Codacy.Credo.ConfigTest do
         ]
       }
 
-      expected_checks = [{Credo.Check.Design.TagFIXME}]
+      expected_checks = [{Credo.Check.Design.TagFIXME, []}]
 
       assert expected_checks ==
                Config.extract_credo_config(%Config{codacy_config: example_json}).credo_config[
