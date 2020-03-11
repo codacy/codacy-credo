@@ -113,12 +113,16 @@ defmodule Codacy.Credo.Config do
     "/opt/app/codacy_credo/"
   end
 
+  def configurationDir() do
+    "/opt/app/configuration"
+  end
+
   def defaultConfigFilePath do
-    "#{defaultConfigPath()}#{@credoConfigFile}"
+    Path.join(defaultConfigPath(), @credoConfigFile)
   end
 
   def srcConfigPath do
-    "#{srcPath()}#{@credoConfigFile}"
+    Path.join(srcPath(), @credoConfigFile)
   end
 
   def srcPath do
@@ -160,17 +164,21 @@ defmodule Codacy.Credo.Config do
   end
 
   defp write_config(credo_config) do
-    tmpFilePath = "/tmp/elixir.conf"
+    tmpFilePath = Path.join(configurationDir(), "elixir.tmp")
+    configFilePath = Path.join(configurationDir(), @credoConfigFile)
+
+    # write the configuration struct into a temp file using inspect
     tmpFile = File.open!(tmpFilePath, [:read, :utf8, :write])
     IO.inspect(tmpFile, credo_config, [])
-    content = File.read!(tmpFilePath)
 
-    configFile = File.write!(Codacy.Credo.Config.srcConfigPath(), "%{
+    # generate the configuration file
+    content = File.read!(tmpFilePath)
+    File.write!(configFilePath, "%{
       configs: [
         #{content}
       ]}")
 
     File.close(tmpFile)
-    File.close(configFile)
+    File.rm!(tmpFilePath)
   end
 end

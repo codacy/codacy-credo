@@ -19,8 +19,13 @@ ADD docs /docs
 COPY --from=builder /tmp/build/_build/prod/rel/codacy_credo /opt/app/codacy_credo/
 # Configure user
 RUN adduser -u 2004 -D docker
+
+COPY .credo.default.exs /opt/app/codacy_credo/.credo.exs
+
+# create configuration folder, required by codacy_credo
+RUN mkdir /opt/app/configuration
+
 RUN ["chown", "-R", "docker:docker", "/docs"]
 RUN ["chown", "-R", "docker:docker", "/opt/app"]
 USER docker
-COPY .credo.default.exs /opt/app/codacy_credo/.credo.exs
 ENTRYPOINT [ "/opt/app/codacy_credo/bin/codacy_credo", "start"]

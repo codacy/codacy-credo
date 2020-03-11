@@ -24,7 +24,7 @@ defmodule Codacy.Credo do
     []
     |> Credo.Execution.build()
     |> init_execution_tasks()
-    |> start()
+    |> executeCredo()
   end
 
   def run(%Config{credo_config: credo_config} = config) do
@@ -35,11 +35,10 @@ defmodule Codacy.Credo do
     |> Credo.Execution.ExecutionSourceFiles.start_server()
     |> Credo.Execution.ExecutionIssues.start_server()
     |> Credo.Execution.ExecutionTiming.start_server()
-    |> init_execution_tasks()
-    |> start()
+    |> executeCredo()
   end
 
-  defp start(exec) do
+  defp executeCredo(exec) do
     exec
     |> Codacy.Credo.Runner.run()
     |> Codacy.Credo.Output.print_results()
