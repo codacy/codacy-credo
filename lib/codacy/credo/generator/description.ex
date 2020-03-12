@@ -32,14 +32,22 @@ defmodule Codacy.Credo.Generator.Description do
 
   def build_check_description(check) do
     pattern_id = pattern_id(check)
+    parameters = parameter_descriptions(check)
 
     %{
       patternId: pattern_id,
       title: title_of_check(pattern_id),
       description: description_of_check(check),
       timeToFix: 5,
-      parameters: parameter_descriptions(check)
+      parameters:
+        if length(parameters) == 0 do
+          nil
+        else
+          parameters
+        end
     }
+    |> Enum.filter(fn {_, v} -> v end)
+    |> Enum.into(%{})
   end
 
   def write_description_json(descriptions) do
@@ -71,7 +79,7 @@ defmodule Codacy.Credo.Generator.Description do
     "Files should end in a trailing blank line."
   """
   def description_of_check(check) do
-    check.explanation
+    check.explanations[:check]
     |> String.split("\n\n")
     |> Enum.at(0)
     |> String.replace("\n", " ")
@@ -85,8 +93,32 @@ defmodule Codacy.Credo.Generator.Description do
     [%{name: "maximum_allowed_quotes", description: "The maximum amount of escaped quotes you want to tolerate."}]
   """
   def parameter_descriptions(check) do
-    check.explanation_for_params
-    |> Enum.map(&explanation_to_description/1)
+    params_descriptions =
+      if length(check.params_names) > 0 && check.explanation_for_params != nil do
+        check.explanation_for_params
+        |> Enum.map(&explanation_to_description/1)
+      else
+        []
+      end
+
+    if length(check.params_names) > length(params_descriptions) do
+      Enum.filter(check.params_names, fn name ->
+        Enum.find(params_descriptions, nil, fn x ->
+          to_string(x.name) == to_string(name)
+        end) == nil
+      end)
+      |> Enum.map(&explanation_to_empty_description/1)
+      |> Enum.concat(params_descriptions)
+    else
+      params_descriptions
+    end
+  end
+
+  defp explanation_to_empty_description(name) do
+    %{
+      name: name,
+      description: ""
+    }
   end
 
   defp explanation_to_description({name, description}) do

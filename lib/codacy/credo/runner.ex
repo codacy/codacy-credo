@@ -27,7 +27,6 @@ defmodule Codacy.Credo.Runner do
 
   defp run_checks(%Execution{} = exec) do
     source_files = Execution.get_source_files(exec)
-
     Credo.Check.Runner.run(source_files, exec)
     exec
   end

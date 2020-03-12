@@ -1,6 +1,9 @@
 defmodule Codacy.Credo.Generator.Patterns do
+  alias Codacy.Credo.Config
+
   @securityPatterns %{
-    "warning_i_ex_pry" => "CommandInjection"
+    "warning_i_ex_pry" => "CommandInjection",
+    "warning_unsafe_exec" => "CommandInjection"
   }
 
   @moduledoc """
@@ -15,8 +18,14 @@ defmodule Codacy.Credo.Generator.Patterns do
   end
 
   def load_checks(dir) do
-    dir
-    |> Credo.ConfigFile.read_or_default()
+    search_dir =
+      if !File.exists?(dir) do
+        File.cwd!()
+      else
+        dir
+      end
+
+    Config.config_or_default(search_dir)
     |> case do
       {:ok, config} ->
         Map.get(config, :checks)
@@ -36,8 +45,7 @@ defmodule Codacy.Credo.Generator.Patterns do
   Utility function to get a map of pattern_ids => Check module
   """
   def pattern_id_map do
-    File.cwd!()
-    |> load_checks
+    load_checks(Config.defaultConfigPath())
     |> Enum.map(&elem(&1, 0))
     |> Enum.map(fn check -> {check_pattern_id({check}), check} end)
     |> Map.new()
@@ -49,19 +57,22 @@ defmodule Codacy.Credo.Generator.Patterns do
   def check_to_pattern(check) do
     patternId = check_pattern_id(check)
     {category, subcategory} = check_to_category(check, patternId)
+    parameters = check_to_parameters(check)
 
-    pattern = %{
+    %{
       patternId: patternId,
       level: check_to_level(check),
       category: category,
-      parameters: check_to_parameters(check)
+      subcategory: subcategory,
+      parameters:
+        if length(parameters) == 0 do
+          nil
+        else
+          parameters
+        end
     }
-
-    if subcategory != nil do
-      Map.put(pattern, "subcategory", subcategory)
-    else
-      pattern
-    end
+    |> Enum.filter(fn {_, v} -> v end)
+    |> Enum.into(%{})
   end
 
   def patterns_json(checks) do
@@ -116,7 +127,7 @@ defmodule Codacy.Credo.Generator.Patterns do
 
   ## Example
     iex> Codacy.Credo.Generator.Patterns.check_to_level({Credo.Check.Refactor.LongQuoteBlocks})
-    "Warning"
+    "Error"
     iex> Codacy.Credo.Generator.Patterns.check_to_level({Credo.Check.Refactor.LongQuoteBlocks, [priority: :low]})
     "Info"
   """
@@ -157,6 +168,7 @@ defmodule Codacy.Credo.Generator.Patterns do
     #   ErrorProne, CodeStyle, UnusedCode, Security, Compatibility, Performance, Documentation
 
     isSecurity = Map.has_key?(@securityPatterns, patternId)
+
     case elem(check, 0).category do
       :warning when isSecurity -> {"Security", @securityPatterns[patternId]}
       :warning -> {"ErrorProne", nil}

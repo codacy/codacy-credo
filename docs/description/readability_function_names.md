@@ -1,4 +1,4 @@
-Function and macro names are always written in snake_case in Elixir.
+Function, macro, and guard names are always written in snake_case in Elixir.
 
     # snake_case
 

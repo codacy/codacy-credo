@@ -1,6 +1,6 @@
 # Codacy Credo
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/78cabdf999204537b5ba799385fb5ce0)](https://www.codacy.com/app/Codacy/codacy-credo?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codacy/codacy-credo&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/78cabdf999204537b5ba799385fb5ce0)](https://www.codacy.com/gh/codacy/codacy-credo?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codacy/codacy-credo&amp;utm_campaign=Badge_Grade)
 [![CircleCI](https://circleci.com/gh/codacy/codacy-credo.svg?style=svg)](https://circleci.com/gh/codacy/codacy-credo)
 [![Docker Version](https://images.microbadger.com/badges/version/codacy/codacy-credo.svg)](https://microbadger.com/images/codacy/codacy-credo "Get your own version badge on microbadger.com")
 

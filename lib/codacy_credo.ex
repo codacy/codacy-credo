@@ -1,5 +1,16 @@
 defmodule Codacy.Credo do
   alias Codacy.Credo.Config
+  alias Codacy.Credo.Runner
+  alias Codacy.Credo.Output
+  alias Credo.Execution
+  alias Credo.Execution.ExecutionConfigFiles
+  alias Credo.Execution.ExecutionSourceFiles
+  alias Credo.Execution.ExecutionIssues
+  alias Credo.Execution.ExecutionTiming
+  alias Credo.Execution.Task.ParseOptions
+  alias Credo.Execution.Task.ConvertCLIOptionsToConfig
+  alias Credo.Execution.Task.DetermineCommand
+
   require Logger
   use Application
 
@@ -10,6 +21,7 @@ defmodule Codacy.Credo do
     Config.srcPath()
     |> Config.load_config()
     |> Config.extract_credo_config()
+    |> Config.write_codacy_config()
     |> run()
 
     System.stop(0)
@@ -20,21 +32,33 @@ defmodule Codacy.Credo do
   def run(%Config{codacy_config: :use_default} = config) do
     File.cd(config.path)
 
-    struct(Credo.Execution, argv: ["--strict", "-a"])
-    |> Credo.Execution.Task.ParseOptions.call(nil)
-    |> Credo.Execution.Task.ConvertCLIOptionsToConfig.call(nil)
-    |> Credo.Execution.Task.DetermineCommand.call(nil)
-    |> Codacy.Credo.Runner.run()
-    |> Codacy.Credo.Output.print_results()
+    []
+    |> Execution.build()
+    |> init_execution_tasks()
+    |> executeCredo()
   end
 
   def run(%Config{credo_config: credo_config} = config) do
     File.cd(config.path)
 
-    struct(Credo.Execution, credo_config)
-    |> Credo.Execution.start_servers()
-    |> Credo.Execution.Task.DetermineCommand.call(nil)
-    |> Codacy.Credo.Runner.run()
-    |> Codacy.Credo.Output.print_results()
+    struct(Execution, credo_config)
+    |> ExecutionConfigFiles.start_server()
+    |> ExecutionSourceFiles.start_server()
+    |> ExecutionIssues.start_server()
+    |> ExecutionTiming.start_server()
+    |> executeCredo()
+  end
+
+  defp executeCredo(exec) do
+    exec
+    |> Runner.run()
+    |> Output.print_results()
+  end
+
+  defp init_execution_tasks(exec) do
+    exec
+    |> ParseOptions.call(nil)
+    |> ConvertCLIOptionsToConfig.call(nil)
+    |> DetermineCommand.call(nil)
   end
 end
