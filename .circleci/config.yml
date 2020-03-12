@@ -7,7 +7,7 @@ orbs:
 jobs:
   unit_test:
     docker:  # run the steps with Docker
-      - image: circleci/elixir:1.10.1
+      - image: circleci/elixir:1.10.2
     steps:
       - checkout
       - run:

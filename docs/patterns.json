@@ -3,25 +3,21 @@
   "patterns": [
     {
       "patternId": "consistency_exception_names",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "consistency_line_endings",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "consistency_multi_alias_import_require_use",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "consistency_parameter_pattern_matching",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
@@ -51,13 +47,11 @@
     },
     {
       "patternId": "consistency_tabs_or_spaces",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "consistency_unused_variable_names",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
@@ -187,19 +181,16 @@
     },
     {
       "patternId": "readability_alias_as",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "readability_alias_order",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "readability_function_names",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
@@ -247,7 +238,6 @@
     },
     {
       "patternId": "readability_module_attribute_names",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
@@ -266,19 +256,16 @@
     },
     {
       "patternId": "readability_module_names",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "readability_multi_alias",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "readability_parentheses_in_condition",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
@@ -295,13 +282,11 @@
     },
     {
       "patternId": "readability_predicate_function_names",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "readability_prefer_implicit_try",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
@@ -318,31 +303,26 @@
     },
     {
       "patternId": "readability_semicolons",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "readability_single_pipe",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "readability_space_after_commas",
-      "parameters": [],
       "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "readability_specs",
-      "parameters": [],
       "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "readability_strict_module_layout",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
@@ -359,7 +339,6 @@
     },
     {
       "patternId": "readability_trailing_blank_line",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
@@ -376,19 +355,16 @@
     },
     {
       "patternId": "readability_unnecessary_alias_expansion",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "readability_variable_names",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "readability_with_custom_tagged_tuple",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     },
@@ -409,13 +385,11 @@
     },
     {
       "patternId": "refactor_append_single_item",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "refactor_cond_statements",
-      "parameters": [],
       "level": "Info",
       "category": "CodeStyle"
     },
@@ -432,7 +406,6 @@
     },
     {
       "patternId": "refactor_double_boolean_negation",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
@@ -468,13 +441,11 @@
     },
     {
       "patternId": "refactor_map_into",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "refactor_match_in_condition",
-      "parameters": [],
       "level": "Info",
       "category": "CodeStyle"
     },
@@ -506,19 +477,16 @@
     },
     {
       "patternId": "refactor_negated_conditions_in_unless",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "refactor_negated_conditions_with_else",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "refactor_negated_is_nil",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
@@ -550,44 +518,37 @@
     },
     {
       "patternId": "refactor_unless_with_else",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "refactor_variable_rebinding",
-      "parameters": [],
       "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "refactor_with_clauses",
-      "parameters": [],
       "level": "Error",
       "category": "CodeStyle"
     },
     {
       "patternId": "warning_bool_operation_on_same_values",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     },
     {
       "patternId": "warning_expensive_empty_enum_check",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     },
     {
       "subcategory": "CommandInjection",
       "patternId": "warning_i_ex_pry",
-      "parameters": [],
       "level": "Error",
       "category": "Security"
     },
     {
       "patternId": "warning_io_inspect",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     },
@@ -608,13 +569,11 @@
     },
     {
       "patternId": "warning_leaky_environment",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     },
     {
       "patternId": "warning_map_get_unsafe_pass",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     },
@@ -631,80 +590,67 @@
     },
     {
       "patternId": "warning_operation_on_same_values",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     },
     {
       "patternId": "warning_operation_with_constant_result",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     },
     {
       "patternId": "warning_raise_inside_rescue",
-      "parameters": [],
       "level": "Info",
       "category": "ErrorProne"
     },
     {
       "subcategory": "CommandInjection",
       "patternId": "warning_unsafe_exec",
-      "parameters": [],
       "level": "Error",
       "category": "Security"
     },
     {
       "patternId": "warning_unsafe_to_atom",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     },
     {
       "patternId": "warning_unused_enum_operation",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     },
     {
       "patternId": "warning_unused_file_operation",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     },
     {
       "patternId": "warning_unused_keyword_operation",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     },
     {
       "patternId": "warning_unused_list_operation",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     },
     {
       "patternId": "warning_unused_path_operation",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     },
     {
       "patternId": "warning_unused_regex_operation",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     },
     {
       "patternId": "warning_unused_string_operation",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     },
     {
       "patternId": "warning_unused_tuple_operation",
-      "parameters": [],
       "level": "Error",
       "category": "ErrorProne"
     }

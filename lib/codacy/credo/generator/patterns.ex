@@ -57,19 +57,22 @@ defmodule Codacy.Credo.Generator.Patterns do
   def check_to_pattern(check) do
     patternId = check_pattern_id(check)
     {category, subcategory} = check_to_category(check, patternId)
+    parameters = check_to_parameters(check)
 
-    pattern = %{
+    %{
       patternId: patternId,
       level: check_to_level(check),
       category: category,
-      parameters: check_to_parameters(check)
+      subcategory: subcategory,
+      parameters:
+        if length(parameters) == 0 do
+          nil
+        else
+          parameters
+        end
     }
-
-    if subcategory != nil do
-      Map.put(pattern, "subcategory", subcategory)
-    else
-      pattern
-    end
+    |> Enum.filter(fn {_, v} -> v end)
+    |> Enum.into(%{})
   end
 
   def patterns_json(checks) do

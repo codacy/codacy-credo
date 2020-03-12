@@ -3,28 +3,24 @@
     "title": "Consistency Exception Names",
     "timeToFix": 5,
     "patternId": "consistency_exception_names",
-    "parameters": [],
     "description": "Exception names should end with a common suffix like \"Error\"."
   },
   {
     "title": "Consistency Line Endings",
     "timeToFix": 5,
     "patternId": "consistency_line_endings",
-    "parameters": [],
     "description": "Windows and *nix systems use different line-endings in files."
   },
   {
     "title": "Consistency Multi Alias Import Require Use",
     "timeToFix": 5,
     "patternId": "consistency_multi_alias_import_require_use",
-    "parameters": [],
     "description": "When using alias, import, require or use for multiple names from the same namespace, you have two options:"
   },
   {
     "title": "Consistency Parameter Pattern Matching",
     "timeToFix": 5,
     "patternId": "consistency_parameter_pattern_matching",
-    "parameters": [],
     "description": "When capturing a parameter using pattern matching you can either put the name before or after the value i.e."
   },
   {
@@ -55,14 +51,12 @@
     "title": "Consistency Tabs Or Spaces",
     "timeToFix": 5,
     "patternId": "consistency_tabs_or_spaces",
-    "parameters": [],
     "description": "Tabs should be used consistently."
   },
   {
     "title": "Consistency Unused Variable Names",
     "timeToFix": 5,
     "patternId": "consistency_unused_variable_names",
-    "parameters": [],
     "description": "Elixir allows us to use `_` as a name for variables that are not meant to be used. But it’s a common practice to give these variables meaningful names anyway (`_user` instead of `_`), but some people prefer to name them all `_`."
   },
   {
@@ -137,21 +131,18 @@
     "title": "Readability Alias As",
     "timeToFix": 5,
     "patternId": "readability_alias_as",
-    "parameters": [],
     "description": "Aliases which are not completely renamed using the `:as` option are easier to follow."
   },
   {
     "title": "Readability Alias Order",
     "timeToFix": 5,
     "patternId": "readability_alias_order",
-    "parameters": [],
     "description": "Alphabetically ordered lists are more easily scannable by the read."
   },
   {
     "title": "Readability Function Names",
     "timeToFix": 5,
     "patternId": "readability_function_names",
-    "parameters": [],
     "description": "Function, macro, and guard names are always written in snake_case in Elixir."
   },
   {
@@ -202,7 +193,6 @@
     "title": "Readability Module Attribute Names",
     "timeToFix": 5,
     "patternId": "readability_module_attribute_names",
-    "parameters": [],
     "description": "Module attribute names are always written in snake_case in Elixir."
   },
   {
@@ -221,21 +211,18 @@
     "title": "Readability Module Names",
     "timeToFix": 5,
     "patternId": "readability_module_names",
-    "parameters": [],
     "description": "Module names are always written in PascalCase in Elixir."
   },
   {
     "title": "Readability Multi Alias",
     "timeToFix": 5,
     "patternId": "readability_multi_alias",
-    "parameters": [],
     "description": "Multi alias expansion makes module uses harder to search for in large code bases."
   },
   {
     "title": "Readability Parentheses In Condition",
     "timeToFix": 5,
     "patternId": "readability_parentheses_in_condition",
-    "parameters": [],
     "description": "Because `if` and `unless` are macros, the preferred style is to not use parentheses around conditions."
   },
   {
@@ -254,14 +241,12 @@
     "title": "Readability Predicate Function Names",
     "timeToFix": 5,
     "patternId": "readability_predicate_function_names",
-    "parameters": [],
     "description": "Predicate functions/macros should be named accordingly:"
   },
   {
     "title": "Readability Prefer Implicit Try",
     "timeToFix": 5,
     "patternId": "readability_prefer_implicit_try",
-    "parameters": [],
     "description": "Prefer using an implicit `try` rather than explicit `try` if you try to rescue anything the function does."
   },
   {
@@ -280,35 +265,30 @@
     "title": "Readability Semicolons",
     "timeToFix": 5,
     "patternId": "readability_semicolons",
-    "parameters": [],
     "description": "Don't use ; to separate statements and expressions. Statements and expressions should be separated by lines."
   },
   {
     "title": "Readability Single Pipe",
     "timeToFix": 5,
     "patternId": "readability_single_pipe",
-    "parameters": [],
     "description": "Pipes (`|>`) should only be used when piping data through multiple calls."
   },
   {
     "title": "Readability Space After Commas",
     "timeToFix": 5,
     "patternId": "readability_space_after_commas",
-    "parameters": [],
     "description": "You can use white-space after commas to make items of lists, tuples and other enumerations easier to separate from one another."
   },
   {
     "title": "Readability Specs",
     "timeToFix": 5,
     "patternId": "readability_specs",
-    "parameters": [],
     "description": "Functions, callbacks and macros need typespecs."
   },
   {
     "title": "Readability Strict Module Layout",
     "timeToFix": 5,
     "patternId": "readability_strict_module_layout",
-    "parameters": [],
     "description": "Provide module parts in a required order."
   },
   {
@@ -327,7 +307,6 @@
     "title": "Readability Trailing Blank Line",
     "timeToFix": 5,
     "patternId": "readability_trailing_blank_line",
-    "parameters": [],
     "description": "Files should end in a trailing blank line."
   },
   {
@@ -346,21 +325,18 @@
     "title": "Readability Unnecessary Alias Expansion",
     "timeToFix": 5,
     "patternId": "readability_unnecessary_alias_expansion",
-    "parameters": [],
     "description": "Alias expansion is useful but when aliasing a single module, it can be harder to read with unnecessary braces."
   },
   {
     "title": "Readability Variable Names",
     "timeToFix": 5,
     "patternId": "readability_variable_names",
-    "parameters": [],
     "description": "Variable names are always written in snake_case in Elixir."
   },
   {
     "title": "Readability With Custom Tagged Tuple",
     "timeToFix": 5,
     "patternId": "readability_with_custom_tagged_tuple",
-    "parameters": [],
     "description": "Avoid using tags for error reporting."
   },
   {
@@ -383,14 +359,12 @@
     "title": "Refactor Append Single Item",
     "timeToFix": 5,
     "patternId": "refactor_append_single_item",
-    "parameters": [],
     "description": "When building up large lists, it is faster to prepend than append. Therefore: It is sometimes best to prepend to the list during iteration and call Enum.reverse/1 at the end, as it is quite fast."
   },
   {
     "title": "Refactor Cond Statements",
     "timeToFix": 5,
     "patternId": "refactor_cond_statements",
-    "parameters": [],
     "description": "Each cond statement should have 3 or more statements including the \"always true\" statement. Otherwise an `if` and `else` construct might be more appropriate."
   },
   {
@@ -409,7 +383,6 @@
     "title": "Refactor Double Boolean Negation",
     "timeToFix": 5,
     "patternId": "refactor_double_boolean_negation",
-    "parameters": [],
     "description": "Having double negations in your code obscures a parameters original value."
   },
   {
@@ -448,14 +421,12 @@
     "title": "Refactor Map Into",
     "timeToFix": 5,
     "patternId": "refactor_map_into",
-    "parameters": [],
     "description": "`Enum.into/3` is more efficient than `Enum.map/2 |> Enum.into/2`."
   },
   {
     "title": "Refactor Match In Condition",
     "timeToFix": 5,
     "patternId": "refactor_match_in_condition",
-    "parameters": [],
     "description": "Pattern matching should only ever be used for simple assignments inside `if` and `unless` clauses."
   },
   {
@@ -486,21 +457,18 @@
     "title": "Refactor Negated Conditions In Unless",
     "timeToFix": 5,
     "patternId": "refactor_negated_conditions_in_unless",
-    "parameters": [],
     "description": "Unless blocks should avoid having a negated condition."
   },
   {
     "title": "Refactor Negated Conditions With Else",
     "timeToFix": 5,
     "patternId": "refactor_negated_conditions_with_else",
-    "parameters": [],
     "description": "An `if` block with a negated condition should not contain an else block."
   },
   {
     "title": "Refactor Negated Is Nil",
     "timeToFix": 5,
     "patternId": "refactor_negated_is_nil",
-    "parameters": [],
     "description": "We should avoid negating the `is_nil` predicate function. Here are a couple of examples: The code here ...     def fun(%{external_id: external_id, id: id}) when not is_nil(external_id) do        ...     end"
   },
   {
@@ -535,49 +503,42 @@
     "title": "Refactor Unless With Else",
     "timeToFix": 5,
     "patternId": "refactor_unless_with_else",
-    "parameters": [],
     "description": "An `unless` block should not contain an else block."
   },
   {
     "title": "Refactor Variable Rebinding",
     "timeToFix": 5,
     "patternId": "refactor_variable_rebinding",
-    "parameters": [],
     "description": "You might want to refrain from rebinding variables."
   },
   {
     "title": "Refactor With Clauses",
     "timeToFix": 5,
     "patternId": "refactor_with_clauses",
-    "parameters": [],
     "description": "`with` statements are useful when you need to chain a sequence of pattern matches, stopping at the first one that fails."
   },
   {
     "title": "Warning Bool Operation On Same Values",
     "timeToFix": 5,
     "patternId": "warning_bool_operation_on_same_values",
-    "parameters": [],
     "description": "Boolean operations with identical values on the left and right side are most probably a logical fallacy or a copy-and-paste error."
   },
   {
     "title": "Warning Expensive Empty Enum Check",
     "timeToFix": 5,
     "patternId": "warning_expensive_empty_enum_check",
-    "parameters": [],
     "description": "Checking if the size of the enum is `0` can be very expensive, since you are determining the exact count of elements."
   },
   {
     "title": "Warning I Ex Pry",
     "timeToFix": 5,
     "patternId": "warning_i_ex_pry",
-    "parameters": [],
     "description": "While calls to IEx.pry might appear in some parts of production code, most calls to this function are added during debugging sessions."
   },
   {
     "title": "Warning Io Inspect",
     "timeToFix": 5,
     "patternId": "warning_io_inspect",
-    "parameters": [],
     "description": "While calls to IO.inspect might appear in some parts of production code, most calls to this function are added during debugging sessions."
   },
   {
@@ -596,14 +557,12 @@
     "title": "Warning Leaky Environment",
     "timeToFix": 5,
     "patternId": "warning_leaky_environment",
-    "parameters": [],
     "description": "OS child processes inherit the environment of their parent process. This includes sensitive configuration parameters, such as credentials. To minimize the risk of such values leaking, clear or overwrite them when spawning executables."
   },
   {
     "title": "Warning Map Get Unsafe Pass",
     "timeToFix": 5,
     "patternId": "warning_map_get_unsafe_pass",
-    "parameters": [],
     "description": "`Map.get/2` can lead into runtime errors if the result is passed into a pipe without a proper default value. This happens when the next function in the pipe cannot handle `nil` values correctly."
   },
   {
@@ -622,91 +581,78 @@
     "title": "Warning Operation On Same Values",
     "timeToFix": 5,
     "patternId": "warning_operation_on_same_values",
-    "parameters": [],
     "description": "Operations on the same values always yield the same result and therefore make little sense in production code."
   },
   {
     "title": "Warning Operation With Constant Result",
     "timeToFix": 5,
     "patternId": "warning_operation_with_constant_result",
-    "parameters": [],
     "description": "Operations on the same values always yield the same result and therefore make little sense in production code."
   },
   {
     "title": "Warning Raise Inside Rescue",
     "timeToFix": 5,
     "patternId": "warning_raise_inside_rescue",
-    "parameters": [],
     "description": "Using `Kernel.raise` inside of a `rescue` block creates a new stacktrace, which obscures the cause of the original error."
   },
   {
     "title": "Warning Unsafe Exec",
     "timeToFix": 5,
     "patternId": "warning_unsafe_exec",
-    "parameters": [],
     "description": "Spawning external commands can lead to command injection vulnerabilities. Use a safe API where arguments are passed as an explicit list, rather than unsafe APIs that run a shell to parse the arguments from a single string."
   },
   {
     "title": "Warning Unsafe To Atom",
     "timeToFix": 5,
     "patternId": "warning_unsafe_to_atom",
-    "parameters": [],
     "description": "Creating atoms from unknown or external sources dynamically is a potentially unsafe operation because atoms are not garbage-collected by the runtime."
   },
   {
     "title": "Warning Unused Enum Operation",
     "timeToFix": 5,
     "patternId": "warning_unused_enum_operation",
-    "parameters": [],
     "description": "With the exception of `Enum.each/2`, the result of a call to the Enum module's functions has to be used."
   },
   {
     "title": "Warning Unused File Operation",
     "timeToFix": 5,
     "patternId": "warning_unused_file_operation",
-    "parameters": [],
     "description": "The result of a call to the File module's functions has to be used."
   },
   {
     "title": "Warning Unused Keyword Operation",
     "timeToFix": 5,
     "patternId": "warning_unused_keyword_operation",
-    "parameters": [],
     "description": "The result of a call to the Keyword module's functions has to be used."
   },
   {
     "title": "Warning Unused List Operation",
     "timeToFix": 5,
     "patternId": "warning_unused_list_operation",
-    "parameters": [],
     "description": "The result of a call to the List module's functions has to be used."
   },
   {
     "title": "Warning Unused Path Operation",
     "timeToFix": 5,
     "patternId": "warning_unused_path_operation",
-    "parameters": [],
     "description": "The result of a call to the Path module's functions has to be used."
   },
   {
     "title": "Warning Unused Regex Operation",
     "timeToFix": 5,
     "patternId": "warning_unused_regex_operation",
-    "parameters": [],
     "description": "The result of a call to the Regex module's functions has to be used."
   },
   {
     "title": "Warning Unused String Operation",
     "timeToFix": 5,
     "patternId": "warning_unused_string_operation",
-    "parameters": [],
     "description": "The result of a call to the String module's functions has to be used."
   },
   {
     "title": "Warning Unused Tuple Operation",
     "timeToFix": 5,
     "patternId": "warning_unused_tuple_operation",
-    "parameters": [],
     "description": "The result of a call to the Tuple module's functions has to be used."
   }
 ]

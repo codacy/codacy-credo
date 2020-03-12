@@ -32,14 +32,22 @@ defmodule Codacy.Credo.Generator.Description do
 
   def build_check_description(check) do
     pattern_id = pattern_id(check)
+    parameters = parameter_descriptions(check)
 
     %{
       patternId: pattern_id,
       title: title_of_check(pattern_id),
       description: description_of_check(check),
       timeToFix: 5,
-      parameters: parameter_descriptions(check)
+      parameters:
+        if length(parameters) == 0 do
+          nil
+        else
+          parameters
+        end
     }
+    |> Enum.filter(fn {_, v} -> v end)
+    |> Enum.into(%{})
   end
 
   def write_description_json(descriptions) do
