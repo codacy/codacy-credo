@@ -2,7 +2,8 @@ defmodule Codacy.Credo.Generator.Patterns do
   alias Codacy.Credo.Config
 
   @securityPatterns %{
-    "warning_i_ex_pry" => "CommandInjection"
+    "warning_i_ex_pry" => "CommandInjection",
+    "warning_unsafe_exec" => "CommandInjection"
   }
 
   @moduledoc """

@@ -648,10 +648,11 @@
       "category": "ErrorProne"
     },
     {
+      "subcategory": "CommandInjection",
       "patternId": "warning_unsafe_exec",
       "parameters": [],
       "level": "Error",
-      "category": "ErrorProne"
+      "category": "Security"
     },
     {
       "patternId": "warning_unsafe_to_atom",
