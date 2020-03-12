@@ -1,5 +1,16 @@
 defmodule Codacy.Credo do
   alias Codacy.Credo.Config
+  alias Codacy.Credo.Runner
+  alias Codacy.Credo.Output
+  alias Credo.Execution
+  alias Credo.Execution.ExecutionConfigFiles
+  alias Credo.Execution.ExecutionSourceFiles
+  alias Credo.Execution.ExecutionIssues
+  alias Credo.Execution.ExecutionTiming
+  alias Credo.Execution.Task.ParseOptions
+  alias Credo.Execution.Task.ConvertCLIOptionsToConfig
+  alias Credo.Execution.Task.DetermineCommand
+
   require Logger
   use Application
 
@@ -22,7 +33,7 @@ defmodule Codacy.Credo do
     File.cd(config.path)
 
     []
-    |> Credo.Execution.build()
+    |> Execution.build()
     |> init_execution_tasks()
     |> executeCredo()
   end
@@ -30,24 +41,24 @@ defmodule Codacy.Credo do
   def run(%Config{credo_config: credo_config} = config) do
     File.cd(config.path)
 
-    struct(Credo.Execution, credo_config)
-    |> Credo.Execution.ExecutionConfigFiles.start_server()
-    |> Credo.Execution.ExecutionSourceFiles.start_server()
-    |> Credo.Execution.ExecutionIssues.start_server()
-    |> Credo.Execution.ExecutionTiming.start_server()
+    struct(Execution, credo_config)
+    |> ExecutionConfigFiles.start_server()
+    |> ExecutionSourceFiles.start_server()
+    |> ExecutionIssues.start_server()
+    |> ExecutionTiming.start_server()
     |> executeCredo()
   end
 
   defp executeCredo(exec) do
     exec
-    |> Codacy.Credo.Runner.run()
-    |> Codacy.Credo.Output.print_results()
+    |> Runner.run()
+    |> Output.print_results()
   end
 
   defp init_execution_tasks(exec) do
     exec
-    |> Credo.Execution.Task.ParseOptions.call(nil)
-    |> Credo.Execution.Task.ConvertCLIOptionsToConfig.call(nil)
-    |> Credo.Execution.Task.DetermineCommand.call(nil)
+    |> ParseOptions.call(nil)
+    |> ConvertCLIOptionsToConfig.call(nil)
+    |> DetermineCommand.call(nil)
   end
 end

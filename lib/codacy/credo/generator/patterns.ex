@@ -1,4 +1,6 @@
 defmodule Codacy.Credo.Generator.Patterns do
+  alias Codacy.Credo.Config
+
   @securityPatterns %{
     "warning_i_ex_pry" => "CommandInjection"
   }
@@ -22,7 +24,7 @@ defmodule Codacy.Credo.Generator.Patterns do
         dir
       end
 
-    Codacy.Credo.Config.config_or_default(search_dir)
+    Config.config_or_default(search_dir)
     |> case do
       {:ok, config} ->
         Map.get(config, :checks)
@@ -42,7 +44,7 @@ defmodule Codacy.Credo.Generator.Patterns do
   Utility function to get a map of pattern_ids => Check module
   """
   def pattern_id_map do
-    load_checks(Codacy.Credo.Config.defaultConfigPath())
+    load_checks(Config.defaultConfigPath())
     |> Enum.map(&elem(&1, 0))
     |> Enum.map(fn check -> {check_pattern_id({check}), check} end)
     |> Map.new()

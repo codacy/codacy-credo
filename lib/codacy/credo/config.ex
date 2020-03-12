@@ -1,4 +1,8 @@
 defmodule Codacy.Credo.Config do
+  alias Credo.ConfigFile
+  alias Credo.Execution
+  alias Codacy.Credo.Generator.Patterns
+
   defstruct path: nil,
             codacy_config: nil,
             patterns: nil,
@@ -80,21 +84,20 @@ defmodule Codacy.Credo.Config do
   def config_or_default(path) do
     [configDir] = find_config_recur(path)
 
-    Credo.ConfigFile.read_or_default(Credo.Execution.build(), configDir)
+    ConfigFile.read_or_default(Execution.build(), configDir)
   end
 
   defp get_patterns(%{tools: tools}) do
-    patterns =
-      tools
-      |> Enum.find(fn tool -> tool.name == "credo" end)
-      |> Map.get(:patterns)
+    tools
+    |> Enum.find(fn tool -> tool.name == "credo" end)
+    |> Map.get(:patterns)
   end
 
   defp extract_checks(patterns) do
-    patterns_map = Codacy.Credo.Generator.Patterns.pattern_id_map()
+    patterns_map = Patterns.pattern_id_map()
 
     if is_nil(patterns) do
-      Credo.ConfigFile.read_or_default(Credo.Execution.build(), srcPath())
+      ConfigFile.read_or_default(Execution.build(), srcPath())
       |> case do
         {:ok, config} ->
           Map.get(config, :checks)
