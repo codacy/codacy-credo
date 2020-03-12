@@ -94,14 +94,11 @@ defmodule Codacy.Credo.Generator.Description do
       end
 
     if length(check.params_names) > length(params_descriptions) do
-      missing =
-        Enum.filter(check.params_names, fn name ->
-          Enum.find(params_descriptions, nil, fn x ->
-            to_string(x.name) == to_string(name)
-          end) == nil
-        end)
-
-      missing
+      Enum.filter(check.params_names, fn name ->
+        Enum.find(params_descriptions, nil, fn x ->
+          to_string(x.name) == to_string(name)
+        end) == nil
+      end)
       |> Enum.map(&explanation_to_empty_description/1)
       |> Enum.concat(params_descriptions)
     else
