@@ -100,8 +100,11 @@ defmodule Codacy.Credo.Config do
       ConfigFile.read_or_default(Execution.build(), srcPath())
       |> case do
         {:ok, config} ->
-          Map.get(config, :checks)
-          |> Enum.sort()
+          # it is required to normalize checks.
+          # the method that does that is private (normalize_check_tuples)
+          # the only way of calling it is by calling this method.
+          # The second param is required and must be a ConfigFile object.
+          ConfigFile.merge_checks(config, %ConfigFile{checks: nil})
 
         {:error, errorMsg} ->
           raise inspect(errorMsg)

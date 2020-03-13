@@ -51,7 +51,7 @@
 
         ## Design checks
         {Credo.Check.Design.TagTODO, false},
-        {Credo.Check.Design.TagFIXME, []},
+        {Credo.Check.Design.TagFIXME},
         {Credo.Check.Refactor.NegatedConditionsWithElse, false},
         {Credo.Check.Readability.TrailingBlankLine, false}
       ]
