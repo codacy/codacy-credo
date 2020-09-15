@@ -4,9 +4,9 @@ pipe cannot handle `nil` values correctly.
 
 Example:
 
-      %{foo: [1, 2 ,3], bar: [4, 5, 6]}
-      |> Map.get(:missing_key)
-      |> Enum.each(&IO.puts/1)
+    %{foo: [1, 2 ,3], bar: [4, 5, 6]}
+    |> Map.get(:missing_key)
+    |> Enum.each(&IO.puts/1)
 
 This will cause a `Protocol.UndefinedError`, since `nil` isn't `Enumerable`.
 Often times while iterating over enumerables zero iterations is preferrable

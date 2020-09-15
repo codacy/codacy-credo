@@ -1,6 +1,7 @@
-Avoid using tags for error reporting.
+Avoid using custom tags for error reporting from `with` macros.
 
-Consider the following code:
+This code injects placeholder tags such as `:resource` and `:authz` for the purpose of error
+reporting.
 
     with {:resource, {:ok, resource}} <- {:resource, Resource.fetch(user)},
          {:authz, :ok} <- {:authz, Resource.authorize(resource, user)} do
@@ -9,9 +10,6 @@ Consider the following code:
       {:resource, _} -> {:error, :not_found}
       {:authz, _} -> {:error, :unauthorized}
     end
-
-This code injects placeholder tags such as `:resource` and `:authz` for the purpose of error
-reporting.
 
 Instead, extract each validation into a separate helper function which returns error
 information immediately:
@@ -29,3 +27,7 @@ At this point, the validation chain in `with` becomes clearer and easier to unde
     with {:ok, resource} <- find_resource(user),
          :ok <- authorize(resource, user),
          do: do_something(user)
+
+Like all `Readability` issues, this one is not a technical concern.
+But you can improve the odds of others reading and liking your code by making
+it easier to follow.

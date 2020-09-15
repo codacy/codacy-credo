@@ -1,4 +1,4 @@
-Operations on the same values always yield the same result and therefore make
+Some numerical operations always yield the same result and therefore make
 little sense in production code.
 
 Examples:

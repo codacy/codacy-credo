@@ -1,4 +1,8 @@
 defmodule Codacy.Credo.Generator.Patterns do
+  @moduledoc """
+  Builds patterns.json from checks specified in `Credo.ConfigFile`
+  """
+
   alias Codacy.Credo.Config
 
   @securityPatterns %{
@@ -6,9 +10,25 @@ defmodule Codacy.Credo.Generator.Patterns do
     "warning_unsafe_exec" => "CommandInjection"
   }
 
-  @moduledoc """
-  Builds patterns.json from checks specified in `Credo.ConfigFile`
-  """
+  defp default_patterns() do
+    [
+      "consistency_line_endings",
+      "consistency_space_around_operators",
+      "consistency_space_in_parentheses",
+      "consistency_tabs_or_spaces",
+      "design_alias_usage",
+      "design_tag_fixme",
+      "design_tag_todo",
+      "readability_max_line_length",
+      "readability_redundant_blank_lines",
+      "readability_semicolons",
+      "readability_space_after_commas",
+      "readability_trailing_blank_line",
+      "readability_trailing_white_space",
+      "refactor_double_boolean_negation",
+      "warning_io_inspect"
+    ]
+  end
 
   def generate() do
     File.cwd!()
@@ -58,6 +78,7 @@ defmodule Codacy.Credo.Generator.Patterns do
     patternId = check_pattern_id(check)
     {category, subcategory} = check_to_category(check, patternId)
     parameters = check_to_parameters(check)
+    enabled = patternId in default_patterns()
 
     %{
       patternId: patternId,
@@ -69,9 +90,10 @@ defmodule Codacy.Credo.Generator.Patterns do
           nil
         else
           parameters
-        end
+        end,
+      enabled: enabled
     }
-    |> Enum.filter(fn {_, v} -> v end)
+    |> Enum.filter(fn {_, v} -> v != nil end)
     |> Enum.into(%{})
   end
 

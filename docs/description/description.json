@@ -9,7 +9,7 @@
     "title": "Consistency Line Endings",
     "timeToFix": 5,
     "patternId": "consistency_line_endings",
-    "description": "Windows and *nix systems use different line-endings in files."
+    "description": "Windows and Linux/macOS systems use different line-endings in files."
   },
   {
     "title": "Consistency Multi Alias Import Require Use",
@@ -21,7 +21,7 @@
     "title": "Consistency Parameter Pattern Matching",
     "timeToFix": 5,
     "patternId": "consistency_parameter_pattern_matching",
-    "description": "When capturing a parameter using pattern matching you can either put the name before or after the value i.e."
+    "description": "When capturing a parameter using pattern matching you can either put the parameter name before or after the value i.e."
   },
   {
     "title": "Consistency Space Around Operators",
@@ -289,6 +289,16 @@
     "title": "Readability Strict Module Layout",
     "timeToFix": 5,
     "patternId": "readability_strict_module_layout",
+    "parameters": [
+      {
+        "name": "order",
+        "description": "List of atoms identifying the desired order of module parts.\n\nSupported values are:\n\n- `:moduledoc` - `@moduledoc` module attribute\n- `:shortdoc` - `@shortdoc` module attribute\n- `:behaviour` - `@behaviour` module attribute\n- `:use` - `use` expression\n- `:import` - `import` expression\n- `:alias` - `alias` expression\n- `:require` - `require` expression\n- `:defstruct` - `defstruct` expression\n- `:opaque` - `@opaque` module attribute\n- `:type` - `@type` module attribute\n- `:typep` - `@typep` module attribute\n- `:callback` - `@callback` module attribute\n- `:macrocallback` - `@macrocallback` module attribute\n- `:optional_callbacks` - `@optional_callbacks` module attribute\n- `:module_attribute` - other module attribute\n- `:public_fun` - public function\n- `:private_fun` - private function or a public function marked with `@doc false`\n- `:public_macro` - public macro\n- `:private_macro` - private macro or a public macro marked with `@doc false`\n- `:callback_impl` - public function or macro marked with `@impl`\n- `:public_guard` - public guard\n- `:private_guard` - private guard or a public guard marked with `@doc false`\n- `:module` - inner module definition (`defmodule` expression inside a module)\n\nNotice that the desired order always starts from the top.\n\nFor example, if you provide the order `~w/public_fun private_fun/a`,\nit means that everything else (e.g. `@moduledoc`) must appear after\nfunction definitions.\n"
+      },
+      {
+        "name": "ignore",
+        "description": "List of atoms identifying the module parts which are not checked, and may\ntherefore appear anywhere in the module. Supported values are the same as\nin the `:order` param.\n"
+      }
+    ],
     "description": "Provide module parts in a required order."
   },
   {
@@ -337,7 +347,7 @@
     "title": "Readability With Custom Tagged Tuple",
     "timeToFix": 5,
     "patternId": "readability_with_custom_tagged_tuple",
-    "description": "Avoid using tags for error reporting."
+    "description": "Avoid using custom tags for error reporting from `with` macros."
   },
   {
     "title": "Refactor Abc Size",
@@ -365,7 +375,7 @@
     "title": "Refactor Cond Statements",
     "timeToFix": 5,
     "patternId": "refactor_cond_statements",
-    "description": "Each cond statement should have 3 or more statements including the \"always true\" statement. Otherwise an `if` and `else` construct might be more appropriate."
+    "description": "Each cond statement should have 3 or more statements including the \"always true\" statement."
   },
   {
     "title": "Refactor Cyclomatic Complexity",
@@ -383,7 +393,7 @@
     "title": "Refactor Double Boolean Negation",
     "timeToFix": 5,
     "patternId": "refactor_double_boolean_negation",
-    "description": "Having double negations in your code obscures a parameters original value."
+    "description": "Having double negations in your code can obscure the parameter's original value."
   },
   {
     "title": "Refactor Function Arity",
@@ -575,7 +585,7 @@
         "description": "List of paths or regex to exclude from this check"
       }
     ],
-    "description": "From the elixir-lang guide:"
+    "description": "Mix is a build tool and, as such, it is not expected to be available in production. Therefore, it is recommended to access Mix.env only in configuration files and inside mix.exs, never in your application code (lib)."
   },
   {
     "title": "Warning Operation On Same Values",
@@ -587,19 +597,19 @@
     "title": "Warning Operation With Constant Result",
     "timeToFix": 5,
     "patternId": "warning_operation_with_constant_result",
-    "description": "Operations on the same values always yield the same result and therefore make little sense in production code."
+    "description": "Some numerical operations always yield the same result and therefore make little sense in production code."
   },
   {
     "title": "Warning Raise Inside Rescue",
     "timeToFix": 5,
     "patternId": "warning_raise_inside_rescue",
-    "description": "Using `Kernel.raise` inside of a `rescue` block creates a new stacktrace, which obscures the cause of the original error."
+    "description": "Using `Kernel.raise` inside of a `rescue` block creates a new stacktrace."
   },
   {
     "title": "Warning Unsafe Exec",
     "timeToFix": 5,
     "patternId": "warning_unsafe_exec",
-    "description": "Spawning external commands can lead to command injection vulnerabilities. Use a safe API where arguments are passed as an explicit list, rather than unsafe APIs that run a shell to parse the arguments from a single string."
+    "description": "Spawning external commands can lead to command injection vulnerabilities."
   },
   {
     "title": "Warning Unsafe To Atom",
