@@ -1,4 +1,5 @@
 ARG elixir_version
+
 FROM elixir:1.10.2-alpine as builder
 LABEL Codacy <team@codacy.com>
 ENV MIX_ENV=prod
