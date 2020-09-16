@@ -15,3 +15,7 @@ Functions with multiple arities need to have a spec defined for each arity:
 
 The check only considers whether the specification is present, it doesn't
 perform any actual type checking.
+
+Like all `Readability` issues, this one is not a technical concern.
+But you can improve the odds of others reading and liking your code by making
+it easier to follow.

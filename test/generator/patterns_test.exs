@@ -30,7 +30,8 @@ defmodule Codacy.Credo.Generator.PatternsTest do
         category: "CodeStyle",
         level: "Info",
         parameters: [%{default: 30, name: "max_size"}, %{default: [], name: "excluded_functions"}],
-        patternId: "refactor_abc_size"
+        patternId: "refactor_abc_size",
+        enabled: false
       }
 
       assert expected == Patterns.check_to_pattern({Credo.Check.Refactor.ABCSize, false})
