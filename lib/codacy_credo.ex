@@ -50,7 +50,7 @@ defmodule Codacy.Credo do
   end
 
   defp executeCredo(exec) do
-    exec
+    %Execution{exec | max_concurrent_check_runs: System.schedulers_online()}
     |> Runner.run()
     |> Output.print_results()
   end
