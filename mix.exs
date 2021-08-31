@@ -29,7 +29,7 @@ defmodule CodacyCredo.MixProject do
       {:credo, "1.5.6"},
       {:poison, "4.0.1"},
       {:distillery, "2.1.1", runtime: false},
-      {:mix_test_watch, "1.0.3", only: :dev, runtime: false},
+      {:mix_test_watch, "1.1.0", only: :dev, runtime: false},
       {:inch_ex, "2.0.0", only: [:dev, :test]},
       {:coverex, "1.5.0", only: :test}
     ]
