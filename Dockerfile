@@ -1,6 +1,6 @@
 ARG elixir_version
 
-FROM elixir:1.11.4-alpine as builder
+FROM elixir:1.15.4-alpine as builder
 LABEL Codacy <team@codacy.com>
 ENV MIX_ENV=prod
 WORKDIR /tmp/build
