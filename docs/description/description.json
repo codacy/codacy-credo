@@ -1,668 +1,692 @@
 [
   {
-    "title": "Consistency Exception Names",
     "timeToFix": 5,
     "patternId": "consistency_exception_names",
+    "title": "Consistency Exception Names",
     "description": "Exception names should end with a common suffix like \"Error\"."
   },
   {
-    "title": "Consistency Line Endings",
     "timeToFix": 5,
     "patternId": "consistency_line_endings",
+    "title": "Consistency Line Endings",
     "description": "Windows and Linux/macOS systems use different line-endings in files."
   },
   {
-    "title": "Consistency Multi Alias Import Require Use",
     "timeToFix": 5,
     "patternId": "consistency_multi_alias_import_require_use",
+    "title": "Consistency Multi Alias Import Require Use",
     "description": "When using alias, import, require or use for multiple names from the same namespace, you have two options:"
   },
   {
-    "title": "Consistency Parameter Pattern Matching",
     "timeToFix": 5,
     "patternId": "consistency_parameter_pattern_matching",
+    "title": "Consistency Parameter Pattern Matching",
     "description": "When capturing a parameter using pattern matching you can either put the parameter name before or after the value i.e."
   },
   {
-    "title": "Consistency Space Around Operators",
     "timeToFix": 5,
     "patternId": "consistency_space_around_operators",
     "parameters": [
       {
-        "name": "ignore",
-        "description": "List of operators to be ignored for this check."
+        "description": "List of operators to be ignored for this check.",
+        "name": "ignore"
       }
     ],
+    "title": "Consistency Space Around Operators",
     "description": "Use spaces around operators like `+`, `-`, `*` and `/`. This is the **preferred** way, although other styles are possible, as long as it is applied consistently."
   },
   {
-    "title": "Consistency Space In Parentheses",
     "timeToFix": 5,
     "patternId": "consistency_space_in_parentheses",
     "parameters": [
       {
-        "name": "allow_empty_enums",
-        "description": "Allows [], %{} and similar empty enum values to be used regardless of spacing throughout the codebase."
+        "description": "Allows [], %{} and similar empty enum values to be used regardless of spacing throughout the codebase.",
+        "name": "allow_empty_enums"
       }
     ],
+    "title": "Consistency Space In Parentheses",
     "description": "Don't use spaces after `(`, `[`, and `{` or before `}`, `]`, and `)`. This is the **preferred** way, although other styles are possible, as long as it is applied consistently."
   },
   {
-    "title": "Consistency Tabs Or Spaces",
     "timeToFix": 5,
     "patternId": "consistency_tabs_or_spaces",
+    "title": "Consistency Tabs Or Spaces",
     "description": "Tabs should be used consistently."
   },
   {
-    "title": "Consistency Unused Variable Names",
     "timeToFix": 5,
     "patternId": "consistency_unused_variable_names",
+    "title": "Consistency Unused Variable Names",
     "description": "Elixir allows us to use `_` as a name for variables that are not meant to be used. But it’s a common practice to give these variables meaningful names anyway (`_user` instead of `_`), but some people prefer to name them all `_`."
   },
   {
-    "title": "Design Alias Usage",
     "timeToFix": 5,
     "patternId": "design_alias_usage",
     "parameters": [
       {
-        "name": "excluded_namespaces",
-        "description": "List of namespaces to be excluded for this check."
+        "description": "List of namespaces to be excluded for this check.",
+        "name": "excluded_namespaces"
       },
       {
-        "name": "excluded_lastnames",
-        "description": "List of lastnames to be excluded for this check."
+        "description": "List of lastnames to be excluded for this check.",
+        "name": "excluded_lastnames"
       },
       {
-        "name": "if_nested_deeper_than",
-        "description": "Only raise an issue if a module is nested deeper than this."
+        "description": "Only raise an issue if a module is nested deeper than this.",
+        "name": "if_nested_deeper_than"
       },
       {
-        "name": "if_called_more_often_than",
-        "description": "Only raise an issue if a module is called more often than this."
+        "description": "Only raise an issue if a module is called more often than this.",
+        "name": "if_called_more_often_than"
       }
     ],
+    "title": "Design Alias Usage",
     "description": "Functions from other modules should be used via an alias if the module's namespace is not top-level."
   },
   {
-    "title": "Design Duplicated Code",
     "timeToFix": 5,
     "patternId": "design_duplicated_code",
     "parameters": [
       {
-        "name": "mass_threshold",
-        "description": "The minimum mass which a part of code has to have to qualify for this check."
+        "description": "The minimum mass which a part of code has to have to qualify for this check.",
+        "name": "mass_threshold"
       },
       {
-        "name": "nodes_threshold",
-        "description": "The number of nodes that need to be found to raise an issue."
+        "description": "The number of nodes that need to be found to raise an issue.",
+        "name": "nodes_threshold"
       },
       {
-        "name": "excluded_macros",
-        "description": "List of macros to be excluded for this check."
+        "description": "List of macros to be excluded for this check.",
+        "name": "excluded_macros"
       }
     ],
+    "title": "Design Duplicated Code",
     "description": "Code should not be copy-pasted in a codebase when there is room to abstract the copied functionality in a meaningful way."
   },
   {
-    "title": "Design Tag Fixme",
     "timeToFix": 5,
     "patternId": "design_tag_fixme",
     "parameters": [
       {
-        "name": "include_doc",
-        "description": "Set to `true` to also include tags from @doc attributes."
+        "description": "Set to `true` to also include tags from @doc attributes.",
+        "name": "include_doc"
       }
     ],
+    "title": "Design Tag Fixme",
     "description": "FIXME comments are used to indicate places where source code needs fixing."
   },
   {
-    "title": "Design Tag Todo",
     "timeToFix": 5,
     "patternId": "design_tag_todo",
     "parameters": [
       {
-        "name": "include_doc",
-        "description": "Set to `true` to also include tags from @doc attributes."
+        "description": "Set to `true` to also include tags from @doc attributes.",
+        "name": "include_doc"
       }
     ],
+    "title": "Design Tag Todo",
     "description": "TODO comments are used to remind yourself of source code related things."
   },
   {
-    "title": "Readability Alias As",
     "timeToFix": 5,
     "patternId": "readability_alias_as",
+    "title": "Readability Alias As",
     "description": "Aliases which are not completely renamed using the `:as` option are easier to follow."
   },
   {
-    "title": "Readability Alias Order",
     "timeToFix": 5,
     "patternId": "readability_alias_order",
+    "title": "Readability Alias Order",
     "description": "Alphabetically ordered lists are more easily scannable by the read."
   },
   {
-    "title": "Readability Function Names",
+    "timeToFix": 5,
+    "patternId": "readability_block_pipe",
+    "parameters": [
+      {
+        "description": "Do not raise an issue for these macros and functions.",
+        "name": "exclude"
+      }
+    ],
+    "title": "Readability Block Pipe",
+    "description": "Pipes (`|>`) should not be used with blocks."
+  },
+  {
     "timeToFix": 5,
     "patternId": "readability_function_names",
+    "parameters": [
+      {
+        "description": "Allows acronyms like HTTP or OTP in function names.",
+        "name": "allow_acronyms"
+      }
+    ],
+    "title": "Readability Function Names",
     "description": "Function, macro, and guard names are always written in snake_case in Elixir."
   },
   {
-    "title": "Readability Large Numbers",
+    "timeToFix": 5,
+    "patternId": "readability_impl_true",
+    "title": "Readability Impl True",
+    "description": "When implementing behaviour callbacks, `@impl true` indicates that a function implements a callback, but a better way is to note the actual behaviour being implemented, for example `@impl MyBehaviour`. This not only improves readability, but adds extra validation in cases where multiple behaviours are implemented in a single module."
+  },
+  {
     "timeToFix": 5,
     "patternId": "readability_large_numbers",
     "parameters": [
       {
-        "name": "only_greater_than",
-        "description": "The check only reports numbers greater than this."
+        "description": "The check only reports numbers greater than this.",
+        "name": "only_greater_than"
       }
     ],
+    "title": "Readability Large Numbers",
     "description": "Numbers can contain underscores for readability purposes. These do not affect the value of the number, but can help read large numbers more easily."
   },
   {
-    "title": "Readability Max Line Length",
     "timeToFix": 5,
     "patternId": "readability_max_line_length",
     "parameters": [
       {
-        "name": "ignore_heredocs",
-        "description": ""
+        "description": "",
+        "name": "ignore_heredocs"
       },
       {
-        "name": "max_length",
-        "description": "The maximum number of characters a line may consist of."
+        "description": "The maximum number of characters a line may consist of.",
+        "name": "max_length"
       },
       {
-        "name": "ignore_definitions",
-        "description": "Set to `true` to ignore lines including function definitions."
+        "description": "Set to `true` to ignore lines including function definitions.",
+        "name": "ignore_definitions"
       },
       {
-        "name": "ignore_specs",
-        "description": "Set to `true` to ignore lines including `@spec`s."
+        "description": "Set to `true` to ignore lines including `@spec`s.",
+        "name": "ignore_specs"
       },
       {
-        "name": "ignore_strings",
-        "description": "Set to `true` to ignore lines that are strings or in heredocs."
+        "description": "Set to `true` to ignore lines that are strings or in heredocs.",
+        "name": "ignore_strings"
       },
       {
-        "name": "ignore_urls",
-        "description": "Set to `true` to ignore lines that contain urls."
+        "description": "Set to `true` to ignore lines that contain urls.",
+        "name": "ignore_urls"
       }
     ],
+    "title": "Readability Max Line Length",
     "description": "Checks for the length of lines."
   },
   {
-    "title": "Readability Module Attribute Names",
     "timeToFix": 5,
     "patternId": "readability_module_attribute_names",
+    "title": "Readability Module Attribute Names",
     "description": "Module attribute names are always written in snake_case in Elixir."
   },
   {
-    "title": "Readability Module Doc",
     "timeToFix": 5,
     "patternId": "readability_module_doc",
     "parameters": [
       {
-        "name": "ignore_names",
-        "description": "All modules matching this regex (or list of regexes) will be ignored."
+        "description": "All modules matching this regex (or list of regexes) will be ignored.",
+        "name": "ignore_names"
       }
     ],
+    "title": "Readability Module Doc",
     "description": "Every module should contain comprehensive documentation."
   },
   {
-    "title": "Readability Module Names",
     "timeToFix": 5,
     "patternId": "readability_module_names",
+    "title": "Readability Module Names",
     "description": "Module names are always written in PascalCase in Elixir."
   },
   {
-    "title": "Readability Multi Alias",
     "timeToFix": 5,
     "patternId": "readability_multi_alias",
+    "title": "Readability Multi Alias",
     "description": "Multi alias expansion makes module uses harder to search for in large code bases."
   },
   {
-    "title": "Readability Parentheses In Condition",
     "timeToFix": 5,
     "patternId": "readability_parentheses_in_condition",
+    "title": "Readability Parentheses In Condition",
     "description": "Because `if` and `unless` are macros, the preferred style is to not use parentheses around conditions."
   },
   {
-    "title": "Readability Parentheses On Zero Arity Defs",
     "timeToFix": 5,
     "patternId": "readability_parentheses_on_zero_arity_defs",
     "parameters": [
       {
-        "name": "parens",
-        "description": ""
+        "description": "",
+        "name": "parens"
       }
     ],
+    "title": "Readability Parentheses On Zero Arity Defs",
     "description": "Either use parentheses or not when defining a function with no arguments."
   },
   {
-    "title": "Readability Predicate Function Names",
     "timeToFix": 5,
     "patternId": "readability_predicate_function_names",
+    "title": "Readability Predicate Function Names",
     "description": "Predicate functions/macros should be named accordingly:"
   },
   {
-    "title": "Readability Prefer Implicit Try",
     "timeToFix": 5,
     "patternId": "readability_prefer_implicit_try",
+    "title": "Readability Prefer Implicit Try",
     "description": "Prefer using an implicit `try` rather than explicit `try` if you try to rescue anything the function does."
   },
   {
-    "title": "Readability Redundant Blank Lines",
     "timeToFix": 5,
     "patternId": "readability_redundant_blank_lines",
     "parameters": [
       {
-        "name": "max_blank_lines",
-        "description": "The maximum number of tolerated consecutive blank lines."
+        "description": "The maximum number of tolerated consecutive blank lines.",
+        "name": "max_blank_lines"
       }
     ],
+    "title": "Readability Redundant Blank Lines",
     "description": "Files should not have two or more consecutive blank lines."
   },
   {
-    "title": "Readability Semicolons",
     "timeToFix": 5,
     "patternId": "readability_semicolons",
+    "title": "Readability Semicolons",
     "description": "Don't use ; to separate statements and expressions. Statements and expressions should be separated by lines."
   },
   {
-    "title": "Readability Single Pipe",
+    "timeToFix": 5,
+    "patternId": "readability_separate_alias_require",
+    "title": "Readability Separate Alias Require",
+    "description": "All instances of `alias` should be consecutive within a file. Likewise, all instances of `require` should be consecutive within a file."
+  },
+  {
     "timeToFix": 5,
     "patternId": "readability_single_pipe",
+    "title": "Readability Single Pipe",
     "description": "Pipes (`|>`) should only be used when piping data through multiple calls."
   },
   {
-    "title": "Readability Space After Commas",
     "timeToFix": 5,
     "patternId": "readability_space_after_commas",
+    "title": "Readability Space After Commas",
     "description": "You can use white-space after commas to make items of lists, tuples and other enumerations easier to separate from one another."
   },
   {
-    "title": "Readability Specs",
     "timeToFix": 5,
     "patternId": "readability_specs",
+    "title": "Readability Specs",
     "description": "Functions, callbacks and macros need typespecs."
   },
   {
-    "title": "Readability Strict Module Layout",
     "timeToFix": 5,
     "patternId": "readability_strict_module_layout",
     "parameters": [
       {
-        "name": "order",
-        "description": "List of atoms identifying the desired order of module parts.\n\nSupported values are:\n\n- `:moduledoc` - `@moduledoc` module attribute\n- `:shortdoc` - `@shortdoc` module attribute\n- `:behaviour` - `@behaviour` module attribute\n- `:use` - `use` expression\n- `:import` - `import` expression\n- `:alias` - `alias` expression\n- `:require` - `require` expression\n- `:defstruct` - `defstruct` expression\n- `:opaque` - `@opaque` module attribute\n- `:type` - `@type` module attribute\n- `:typep` - `@typep` module attribute\n- `:callback` - `@callback` module attribute\n- `:macrocallback` - `@macrocallback` module attribute\n- `:optional_callbacks` - `@optional_callbacks` module attribute\n- `:module_attribute` - other module attribute\n- `:public_fun` - public function\n- `:private_fun` - private function or a public function marked with `@doc false`\n- `:public_macro` - public macro\n- `:private_macro` - private macro or a public macro marked with `@doc false`\n- `:callback_impl` - public function or macro marked with `@impl`\n- `:public_guard` - public guard\n- `:private_guard` - private guard or a public guard marked with `@doc false`\n- `:module` - inner module definition (`defmodule` expression inside a module)\n\nNotice that the desired order always starts from the top.\n\nFor example, if you provide the order `~w/public_fun private_fun/a`,\nit means that everything else (e.g. `@moduledoc`) must appear after\nfunction definitions.\n"
+        "description": "List of atoms identifying the desired order of module parts.\n\nSupported values are:\n\n- `:moduledoc` - `@moduledoc` module attribute\n- `:shortdoc` - `@shortdoc` module attribute\n- `:behaviour` - `@behaviour` module attribute\n- `:use` - `use` expression\n- `:import` - `import` expression\n- `:alias` - `alias` expression\n- `:require` - `require` expression\n- `:defstruct` - `defstruct` expression\n- `:opaque` - `@opaque` module attribute\n- `:type` - `@type` module attribute\n- `:typep` - `@typep` module attribute\n- `:callback` - `@callback` module attribute\n- `:macrocallback` - `@macrocallback` module attribute\n- `:optional_callbacks` - `@optional_callbacks` module attribute\n- `:module_attribute` - other module attribute\n- `:public_fun` - public function\n- `:private_fun` - private function or a public function marked with `@doc false`\n- `:public_macro` - public macro\n- `:private_macro` - private macro or a public macro marked with `@doc false`\n- `:callback_impl` - public function or macro marked with `@impl`\n- `:public_guard` - public guard\n- `:private_guard` - private guard or a public guard marked with `@doc false`\n- `:module` - inner module definition (`defmodule` expression inside a module)\n\nNotice that the desired order always starts from the top.\n\nFor example, if you provide the order `~w/public_fun private_fun/a`,\nit means that everything else (e.g. `@moduledoc`) must appear after\nfunction definitions.\n",
+        "name": "order"
       },
       {
-        "name": "ignore",
-        "description": "List of atoms identifying the module parts which are not checked, and may\ntherefore appear anywhere in the module. Supported values are the same as\nin the `:order` param.\n"
+        "description": "List of atoms identifying the module parts which are not checked, and may\ntherefore appear anywhere in the module. Supported values are the same as\nin the `:order` param.\n",
+        "name": "ignore"
       }
     ],
+    "title": "Readability Strict Module Layout",
     "description": "Provide module parts in a required order."
   },
   {
-    "title": "Readability String Sigils",
     "timeToFix": 5,
     "patternId": "readability_string_sigils",
     "parameters": [
       {
-        "name": "maximum_allowed_quotes",
-        "description": "The maximum amount of escaped quotes you want to tolerate."
+        "description": "The maximum amount of escaped quotes you want to tolerate.",
+        "name": "maximum_allowed_quotes"
       }
     ],
+    "title": "Readability String Sigils",
     "description": "If you used quoted strings that contain quotes, you might want to consider switching to the use of sigils instead."
   },
   {
-    "title": "Readability Trailing Blank Line",
     "timeToFix": 5,
     "patternId": "readability_trailing_blank_line",
+    "title": "Readability Trailing Blank Line",
     "description": "Files should end in a trailing blank line."
   },
   {
-    "title": "Readability Trailing White Space",
     "timeToFix": 5,
     "patternId": "readability_trailing_white_space",
     "parameters": [
       {
-        "name": "ignore_strings",
-        "description": "Set to `false` to check lines that are strings or in heredocs"
+        "description": "Set to `false` to check lines that are strings or in heredocs",
+        "name": "ignore_strings"
       }
     ],
+    "title": "Readability Trailing White Space",
     "description": "There should be no white-space (i.e. tabs, spaces) at the end of a line."
   },
   {
-    "title": "Readability Unnecessary Alias Expansion",
     "timeToFix": 5,
     "patternId": "readability_unnecessary_alias_expansion",
+    "title": "Readability Unnecessary Alias Expansion",
     "description": "Alias expansion is useful but when aliasing a single module, it can be harder to read with unnecessary braces."
   },
   {
-    "title": "Readability Variable Names",
     "timeToFix": 5,
     "patternId": "readability_variable_names",
+    "title": "Readability Variable Names",
     "description": "Variable names are always written in snake_case in Elixir."
   },
   {
-    "title": "Readability With Custom Tagged Tuple",
     "timeToFix": 5,
     "patternId": "readability_with_custom_tagged_tuple",
+    "title": "Readability With Custom Tagged Tuple",
     "description": "Avoid using custom tags for error reporting from `with` macros."
   },
   {
-    "title": "Refactor Abc Size",
     "timeToFix": 5,
     "patternId": "refactor_abc_size",
     "parameters": [
       {
-        "name": "max_size",
-        "description": "The maximum ABC size a function should have."
+        "description": "The maximum ABC size a function should have.",
+        "name": "max_size"
       },
       {
-        "name": "excluded_functions",
-        "description": "All functions listed will be ignored."
+        "description": "All functions listed will be ignored.",
+        "name": "excluded_functions"
       }
     ],
+    "title": "Refactor Abc Size",
     "description": "The ABC size describes a metric based on assignments, branches and conditions."
   },
   {
-    "title": "Refactor Append Single Item",
     "timeToFix": 5,
     "patternId": "refactor_append_single_item",
+    "title": "Refactor Append Single Item",
     "description": "When building up large lists, it is faster to prepend than append. Therefore: It is sometimes best to prepend to the list during iteration and call Enum.reverse/1 at the end, as it is quite fast."
   },
   {
-    "title": "Refactor Cond Statements",
     "timeToFix": 5,
     "patternId": "refactor_cond_statements",
+    "title": "Refactor Cond Statements",
     "description": "Each cond statement should have 3 or more statements including the \"always true\" statement."
   },
   {
-    "title": "Refactor Cyclomatic Complexity",
     "timeToFix": 5,
     "patternId": "refactor_cyclomatic_complexity",
     "parameters": [
       {
-        "name": "max_complexity",
-        "description": "The maximum cyclomatic complexity a function should have."
+        "description": "The maximum cyclomatic complexity a function should have.",
+        "name": "max_complexity"
       }
     ],
+    "title": "Refactor Cyclomatic Complexity",
     "description": "Cyclomatic complexity is a software complexity metric closely correlated with coding errors."
   },
   {
-    "title": "Refactor Double Boolean Negation",
     "timeToFix": 5,
     "patternId": "refactor_double_boolean_negation",
+    "title": "Refactor Double Boolean Negation",
     "description": "Having double negations in your code can obscure the parameter's original value."
   },
   {
-    "title": "Refactor Function Arity",
     "timeToFix": 5,
     "patternId": "refactor_function_arity",
     "parameters": [
       {
-        "name": "max_arity",
-        "description": "The maximum number of parameters which a function should take."
+        "description": "The maximum number of parameters which a function should take.",
+        "name": "max_arity"
       },
       {
-        "name": "ignore_defp",
-        "description": "Set to `true` to ignore private functions."
+        "description": "Set to `true` to ignore private functions.",
+        "name": "ignore_defp"
       }
     ],
+    "title": "Refactor Function Arity",
     "description": "A function can take as many parameters as needed, but even in a functional language there can be too many parameters."
   },
   {
-    "title": "Refactor Long Quote Blocks",
     "timeToFix": 5,
     "patternId": "refactor_long_quote_blocks",
     "parameters": [
       {
-        "name": "max_line_count",
-        "description": "The maximum number of lines a quote block should be allowed to have."
+        "description": "The maximum number of lines a quote block should be allowed to have.",
+        "name": "max_line_count"
       },
       {
-        "name": "ignore_comments",
-        "description": "Ignores comments when counting the lines of a `quote` block."
+        "description": "Ignores comments when counting the lines of a `quote` block.",
+        "name": "ignore_comments"
       }
     ],
+    "title": "Refactor Long Quote Blocks",
     "description": "Long `quote` blocks are generally an indication that too much is done inside them."
   },
   {
-    "title": "Refactor Map Into",
-    "timeToFix": 5,
-    "patternId": "refactor_map_into",
-    "description": "`Enum.into/3` is more efficient than `Enum.map/2 |> Enum.into/2`."
-  },
-  {
-    "title": "Refactor Match In Condition",
     "timeToFix": 5,
     "patternId": "refactor_match_in_condition",
+    "title": "Refactor Match In Condition",
     "description": "Pattern matching should only ever be used for simple assignments inside `if` and `unless` clauses."
   },
   {
-    "title": "Refactor Module Dependencies",
     "timeToFix": 5,
     "patternId": "refactor_module_dependencies",
     "parameters": [
       {
-        "name": "max_deps",
-        "description": "Maximum number of module dependencies."
+        "description": "Maximum number of module dependencies.",
+        "name": "max_deps"
       },
       {
-        "name": "dependency_namespaces",
-        "description": "List of dependency namespaces to include in this check"
+        "description": "List of dependency namespaces to include in this check",
+        "name": "dependency_namespaces"
       },
       {
-        "name": "excluded_namespaces",
-        "description": "List of namespaces to exclude from this check"
+        "description": "List of namespaces to exclude from this check",
+        "name": "excluded_namespaces"
       },
       {
-        "name": "excluded_paths",
-        "description": "List of paths or regex to exclude from this check"
+        "description": "List of paths or regex to exclude from this check",
+        "name": "excluded_paths"
       }
     ],
+    "title": "Refactor Module Dependencies",
     "description": "This module might be doing too much. Consider limiting the number of module dependencies."
   },
   {
-    "title": "Refactor Negated Conditions In Unless",
     "timeToFix": 5,
     "patternId": "refactor_negated_conditions_in_unless",
+    "title": "Refactor Negated Conditions In Unless",
     "description": "Unless blocks should avoid having a negated condition."
   },
   {
-    "title": "Refactor Negated Conditions With Else",
     "timeToFix": 5,
     "patternId": "refactor_negated_conditions_with_else",
+    "title": "Refactor Negated Conditions With Else",
     "description": "An `if` block with a negated condition should not contain an else block."
   },
   {
-    "title": "Refactor Negated Is Nil",
     "timeToFix": 5,
     "patternId": "refactor_negated_is_nil",
+    "title": "Refactor Negated Is Nil",
     "description": "We should avoid negating the `is_nil` predicate function. Here are a couple of examples: The code here ...     def fun(%{external_id: external_id, id: id}) when not is_nil(external_id) do        ...     end"
   },
   {
-    "title": "Refactor Nesting",
     "timeToFix": 5,
     "patternId": "refactor_nesting",
     "parameters": [
       {
-        "name": "max_nesting",
-        "description": "The maximum number of levels code should be nested."
+        "description": "The maximum number of levels code should be nested.",
+        "name": "max_nesting"
       }
     ],
+    "title": "Refactor Nesting",
     "description": "Code should not be nested more than once inside a function."
   },
   {
-    "title": "Refactor Pipe Chain Start",
     "timeToFix": 5,
     "patternId": "refactor_pipe_chain_start",
     "parameters": [
       {
-        "name": "excluded_functions",
-        "description": "All functions listed will be ignored."
+        "description": "All functions listed will be ignored.",
+        "name": "excluded_functions"
       },
       {
-        "name": "excluded_argument_types",
-        "description": "All pipes with argument types listed will be ignored."
+        "description": "All pipes with argument types listed will be ignored.",
+        "name": "excluded_argument_types"
       }
     ],
+    "title": "Refactor Pipe Chain Start",
     "description": "Pipes (`|>`) can become more readable by starting with a \"raw\" value."
   },
   {
-    "title": "Refactor Unless With Else",
     "timeToFix": 5,
     "patternId": "refactor_unless_with_else",
+    "title": "Refactor Unless With Else",
     "description": "An `unless` block should not contain an else block."
   },
   {
-    "title": "Refactor Variable Rebinding",
     "timeToFix": 5,
     "patternId": "refactor_variable_rebinding",
+    "parameters": [
+      {
+        "description": "Variables with a bang suffix will be ignored.",
+        "name": "allow_bang"
+      }
+    ],
+    "title": "Refactor Variable Rebinding",
     "description": "You might want to refrain from rebinding variables."
   },
   {
-    "title": "Refactor With Clauses",
     "timeToFix": 5,
     "patternId": "refactor_with_clauses",
+    "title": "Refactor With Clauses",
     "description": "`with` statements are useful when you need to chain a sequence of pattern matches, stopping at the first one that fails."
   },
   {
-    "title": "Warning Bool Operation On Same Values",
+    "timeToFix": 5,
+    "patternId": "warning_application_config_in_module_attribute",
+    "title": "Warning Application Config In Module Attribute",
+    "description": "Module attributes are evaluated at compile time and not at run time. As a result, certain configuration read calls made in your module attributes may work as expected during local development, but may break once in a deployed context."
+  },
+  {
     "timeToFix": 5,
     "patternId": "warning_bool_operation_on_same_values",
+    "title": "Warning Bool Operation On Same Values",
     "description": "Boolean operations with identical values on the left and right side are most probably a logical fallacy or a copy-and-paste error."
   },
   {
-    "title": "Warning Expensive Empty Enum Check",
     "timeToFix": 5,
     "patternId": "warning_expensive_empty_enum_check",
+    "title": "Warning Expensive Empty Enum Check",
     "description": "Checking if the size of the enum is `0` can be very expensive, since you are determining the exact count of elements."
   },
   {
-    "title": "Warning I Ex Pry",
     "timeToFix": 5,
     "patternId": "warning_i_ex_pry",
+    "title": "Warning I Ex Pry",
     "description": "While calls to IEx.pry might appear in some parts of production code, most calls to this function are added during debugging sessions."
   },
   {
-    "title": "Warning Io Inspect",
     "timeToFix": 5,
     "patternId": "warning_io_inspect",
+    "title": "Warning Io Inspect",
     "description": "While calls to IO.inspect might appear in some parts of production code, most calls to this function are added during debugging sessions."
   },
   {
-    "title": "Warning Lazy Logging",
-    "timeToFix": 5,
-    "patternId": "warning_lazy_logging",
-    "parameters": [
-      {
-        "name": "ignore",
-        "description": "Do not raise an issue for these Logger calls."
-      }
-    ],
-    "description": "Ensures laziness of Logger calls."
-  },
-  {
-    "title": "Warning Leaky Environment",
     "timeToFix": 5,
     "patternId": "warning_leaky_environment",
+    "title": "Warning Leaky Environment",
     "description": "OS child processes inherit the environment of their parent process. This includes sensitive configuration parameters, such as credentials. To minimize the risk of such values leaking, clear or overwrite them when spawning executables."
   },
   {
-    "title": "Warning Map Get Unsafe Pass",
     "timeToFix": 5,
     "patternId": "warning_map_get_unsafe_pass",
+    "title": "Warning Map Get Unsafe Pass",
     "description": "`Map.get/2` can lead into runtime errors if the result is passed into a pipe without a proper default value. This happens when the next function in the pipe cannot handle `nil` values correctly."
   },
   {
-    "title": "Warning Mix Env",
     "timeToFix": 5,
     "patternId": "warning_mix_env",
     "parameters": [
       {
-        "name": "excluded_paths",
-        "description": "List of paths or regex to exclude from this check"
+        "description": "List of paths or regex to exclude from this check",
+        "name": "excluded_paths"
       }
     ],
+    "title": "Warning Mix Env",
     "description": "Mix is a build tool and, as such, it is not expected to be available in production. Therefore, it is recommended to access Mix.env only in configuration files and inside mix.exs, never in your application code (lib)."
   },
   {
-    "title": "Warning Operation On Same Values",
     "timeToFix": 5,
     "patternId": "warning_operation_on_same_values",
+    "title": "Warning Operation On Same Values",
     "description": "Operations on the same values always yield the same result and therefore make little sense in production code."
   },
   {
-    "title": "Warning Operation With Constant Result",
     "timeToFix": 5,
     "patternId": "warning_operation_with_constant_result",
+    "title": "Warning Operation With Constant Result",
     "description": "Some numerical operations always yield the same result and therefore make little sense in production code."
   },
   {
-    "title": "Warning Raise Inside Rescue",
     "timeToFix": 5,
     "patternId": "warning_raise_inside_rescue",
+    "title": "Warning Raise Inside Rescue",
     "description": "Using `Kernel.raise` inside of a `rescue` block creates a new stacktrace."
   },
   {
-    "title": "Warning Unsafe Exec",
     "timeToFix": 5,
     "patternId": "warning_unsafe_exec",
+    "title": "Warning Unsafe Exec",
     "description": "Spawning external commands can lead to command injection vulnerabilities."
   },
   {
-    "title": "Warning Unsafe To Atom",
     "timeToFix": 5,
     "patternId": "warning_unsafe_to_atom",
+    "title": "Warning Unsafe To Atom",
     "description": "Creating atoms from unknown or external sources dynamically is a potentially unsafe operation because atoms are not garbage-collected by the runtime."
   },
   {
-    "title": "Warning Unused Enum Operation",
     "timeToFix": 5,
     "patternId": "warning_unused_enum_operation",
+    "title": "Warning Unused Enum Operation",
     "description": "With the exception of `Enum.each/2`, the result of a call to the Enum module's functions has to be used."
   },
   {
-    "title": "Warning Unused File Operation",
     "timeToFix": 5,
     "patternId": "warning_unused_file_operation",
+    "title": "Warning Unused File Operation",
     "description": "The result of a call to the File module's functions has to be used."
   },
   {
-    "title": "Warning Unused Keyword Operation",
     "timeToFix": 5,
     "patternId": "warning_unused_keyword_operation",
+    "title": "Warning Unused Keyword Operation",
     "description": "The result of a call to the Keyword module's functions has to be used."
   },
   {
-    "title": "Warning Unused List Operation",
     "timeToFix": 5,
     "patternId": "warning_unused_list_operation",
+    "title": "Warning Unused List Operation",
     "description": "The result of a call to the List module's functions has to be used."
   },
   {
-    "title": "Warning Unused Path Operation",
     "timeToFix": 5,
     "patternId": "warning_unused_path_operation",
+    "title": "Warning Unused Path Operation",
     "description": "The result of a call to the Path module's functions has to be used."
   },
   {
-    "title": "Warning Unused Regex Operation",
     "timeToFix": 5,
     "patternId": "warning_unused_regex_operation",
+    "title": "Warning Unused Regex Operation",
     "description": "The result of a call to the Regex module's functions has to be used."
   },
   {
-    "title": "Warning Unused String Operation",
     "timeToFix": 5,
     "patternId": "warning_unused_string_operation",
+    "title": "Warning Unused String Operation",
     "description": "The result of a call to the String module's functions has to be used."
   },
   {
-    "title": "Warning Unused Tuple Operation",
     "timeToFix": 5,
     "patternId": "warning_unused_tuple_operation",
+    "title": "Warning Unused Tuple Operation",
     "description": "The result of a call to the Tuple module's functions has to be used."
   }
 ]

@@ -1,29 +1,28 @@
 {
-  "version": "1.4.0",
   "patterns": [
     {
       "patternId": "consistency_exception_names",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "consistency_line_endings",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": true,
-      "category": "CodeStyle"
+      "enabled": true
     },
     {
       "patternId": "consistency_multi_alias_import_require_use",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "consistency_parameter_pattern_matching",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "consistency_space_around_operators",
@@ -35,9 +34,9 @@
           ]
         }
       ],
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": true,
-      "category": "CodeStyle"
+      "enabled": true
     },
     {
       "patternId": "consistency_space_in_parentheses",
@@ -47,21 +46,21 @@
           "default": false
         }
       ],
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": true,
-      "category": "CodeStyle"
+      "enabled": true
     },
     {
       "patternId": "consistency_tabs_or_spaces",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": true,
-      "category": "CodeStyle"
+      "enabled": true
     },
     {
       "patternId": "consistency_unused_variable_names",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "design_alias_usage",
@@ -143,9 +142,9 @@
           "default": 0
         }
       ],
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": true,
-      "category": "CodeStyle"
+      "enabled": true
     },
     {
       "patternId": "design_duplicated_code",
@@ -163,9 +162,9 @@
           "default": []
         }
       ],
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "design_tag_fixme",
@@ -175,9 +174,9 @@
           "default": true
         }
       ],
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": true,
-      "category": "CodeStyle"
+      "enabled": true
     },
     {
       "patternId": "design_tag_todo",
@@ -187,27 +186,51 @@
           "default": true
         }
       ],
+      "category": "CodeStyle",
       "level": "Info",
-      "enabled": true,
-      "category": "CodeStyle"
+      "enabled": true
     },
     {
       "patternId": "readability_alias_as",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "readability_alias_order",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
+    },
+    {
+      "patternId": "readability_block_pipe",
+      "parameters": [
+        {
+          "name": "exclude",
+          "default": []
+        }
+      ],
+      "category": "CodeStyle",
+      "level": "Error",
+      "enabled": false
     },
     {
       "patternId": "readability_function_names",
+      "parameters": [
+        {
+          "name": "allow_acronyms",
+          "default": false
+        }
+      ],
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
+    },
+    {
+      "patternId": "readability_impl_true",
+      "category": "CodeStyle",
+      "level": "Error",
+      "enabled": false
     },
     {
       "patternId": "readability_large_numbers",
@@ -217,9 +240,9 @@
           "default": 9999
         }
       ],
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "readability_max_line_length",
@@ -249,15 +272,15 @@
           "default": true
         }
       ],
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": true,
-      "category": "CodeStyle"
+      "enabled": true
     },
     {
       "patternId": "readability_module_attribute_names",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "readability_module_doc",
@@ -269,27 +292,27 @@
           ]
         }
       ],
+      "category": "CodeStyle",
       "level": "Info",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "readability_module_names",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "readability_multi_alias",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "readability_parentheses_in_condition",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "readability_parentheses_on_zero_arity_defs",
@@ -299,21 +322,21 @@
           "default": false
         }
       ],
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "readability_predicate_function_names",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "readability_prefer_implicit_try",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "readability_redundant_blank_lines",
@@ -323,33 +346,39 @@
           "default": 1
         }
       ],
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": true,
-      "category": "CodeStyle"
+      "enabled": true
     },
     {
       "patternId": "readability_semicolons",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": true,
-      "category": "CodeStyle"
+      "enabled": true
+    },
+    {
+      "patternId": "readability_separate_alias_require",
+      "category": "CodeStyle",
+      "level": "Error",
+      "enabled": false
     },
     {
       "patternId": "readability_single_pipe",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "readability_space_after_commas",
+      "category": "CodeStyle",
       "level": "Info",
-      "enabled": true,
-      "category": "CodeStyle"
+      "enabled": true
     },
     {
       "patternId": "readability_specs",
+      "category": "CodeStyle",
       "level": "Info",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "readability_strict_module_layout",
@@ -371,9 +400,9 @@
           "default": []
         }
       ],
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "readability_string_sigils",
@@ -383,15 +412,15 @@
           "default": 3
         }
       ],
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "readability_trailing_blank_line",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": true,
-      "category": "CodeStyle"
+      "enabled": true
     },
     {
       "patternId": "readability_trailing_white_space",
@@ -401,27 +430,27 @@
           "default": true
         }
       ],
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": true,
-      "category": "CodeStyle"
+      "enabled": true
     },
     {
       "patternId": "readability_unnecessary_alias_expansion",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "readability_variable_names",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "readability_with_custom_tagged_tuple",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "patternId": "refactor_abc_size",
@@ -435,21 +464,21 @@
           "default": []
         }
       ],
+      "category": "CodeStyle",
       "level": "Info",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "refactor_append_single_item",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "refactor_cond_statements",
+      "category": "CodeStyle",
       "level": "Info",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "refactor_cyclomatic_complexity",
@@ -459,15 +488,15 @@
           "default": 9
         }
       ],
+      "category": "CodeStyle",
       "level": "Info",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "refactor_double_boolean_negation",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": true,
-      "category": "CodeStyle"
+      "enabled": true
     },
     {
       "patternId": "refactor_function_arity",
@@ -481,9 +510,9 @@
           "default": false
         }
       ],
+      "category": "CodeStyle",
       "level": "Info",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "refactor_long_quote_blocks",
@@ -497,21 +526,15 @@
           "default": false
         }
       ],
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "refactor_map_into",
-      "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "refactor_match_in_condition",
+      "category": "CodeStyle",
       "level": "Info",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "refactor_module_dependencies",
@@ -536,27 +559,27 @@
           ]
         }
       ],
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "refactor_negated_conditions_in_unless",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "refactor_negated_conditions_with_else",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "refactor_negated_is_nil",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "refactor_nesting",
@@ -566,9 +589,9 @@
           "default": 2
         }
       ],
+      "category": "CodeStyle",
       "level": "Info",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "refactor_pipe_chain_start",
@@ -582,80 +605,76 @@
           "default": []
         }
       ],
+      "category": "CodeStyle",
       "level": "Info",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "refactor_unless_with_else",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "refactor_variable_rebinding",
+      "parameters": [
+        {
+          "name": "allow_bang",
+          "default": false
+        }
+      ],
+      "category": "CodeStyle",
       "level": "Info",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
     },
     {
       "patternId": "refactor_with_clauses",
+      "category": "CodeStyle",
       "level": "Error",
-      "enabled": false,
-      "category": "CodeStyle"
+      "enabled": false
+    },
+    {
+      "patternId": "warning_application_config_in_module_attribute",
+      "category": "ErrorProne",
+      "level": "Error",
+      "enabled": false
     },
     {
       "patternId": "warning_bool_operation_on_same_values",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "patternId": "warning_expensive_empty_enum_check",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "subcategory": "CommandInjection",
       "patternId": "warning_i_ex_pry",
+      "category": "Security",
       "level": "Error",
-      "enabled": false,
-      "category": "Security"
+      "enabled": false
     },
     {
       "patternId": "warning_io_inspect",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": true,
-      "category": "ErrorProne"
-    },
-    {
-      "patternId": "warning_lazy_logging",
-      "parameters": [
-        {
-          "name": "ignore",
-          "default": [
-            "error",
-            "warn",
-            "info"
-          ]
-        }
-      ],
-      "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": true
     },
     {
       "patternId": "warning_leaky_environment",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "patternId": "warning_map_get_unsafe_pass",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "patternId": "warning_mix_env",
@@ -665,89 +684,90 @@
           "default": []
         }
       ],
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "patternId": "warning_operation_on_same_values",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "patternId": "warning_operation_with_constant_result",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "patternId": "warning_raise_inside_rescue",
+      "category": "ErrorProne",
       "level": "Info",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "subcategory": "CommandInjection",
       "patternId": "warning_unsafe_exec",
+      "category": "Security",
       "level": "Error",
-      "enabled": false,
-      "category": "Security"
+      "enabled": false
     },
     {
       "patternId": "warning_unsafe_to_atom",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "patternId": "warning_unused_enum_operation",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "patternId": "warning_unused_file_operation",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "patternId": "warning_unused_keyword_operation",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "patternId": "warning_unused_list_operation",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "patternId": "warning_unused_path_operation",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "patternId": "warning_unused_regex_operation",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "patternId": "warning_unused_string_operation",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     },
     {
       "patternId": "warning_unused_tuple_operation",
+      "category": "ErrorProne",
       "level": "Error",
-      "enabled": false,
-      "category": "ErrorProne"
+      "enabled": false
     }
   ],
+  "version": "1.5.6-ref.bump-credo-1.7.0.c524039+uncommittedchanges",
   "name": "credo"
 }

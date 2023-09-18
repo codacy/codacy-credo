@@ -1,6 +1,6 @@
 ARG elixir_version
 
-FROM elixir:1.10.4-alpine as builder
+FROM elixir:1.11.4-alpine as builder
 LABEL Codacy <team@codacy.com>
 ENV MIX_ENV=prod
 WORKDIR /tmp/build
@@ -11,7 +11,7 @@ RUN mix deps.get
 RUN mix deps.compile
 RUN mix release
 
-FROM alpine:3.14
+FROM alpine:3.18.3
 LABEL Codacy <team@codacy.com>
 RUN apk add --update openssl bash && \
     rm -rf /var/cache/*/*
