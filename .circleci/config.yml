@@ -18,7 +18,7 @@ jobs:
           command: mix deps.get
       - run:
           name: Compile dependencies
-          command: mix deps.compile
+          command: mix deps.compile --force
       - run:
           name: Run tools native tests
           command: mix test
