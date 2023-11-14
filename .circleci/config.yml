@@ -7,7 +7,7 @@ orbs:
 jobs:
   unit_test:
     docker:  # run the steps with Docker
-      - image: cimg/elixir:1.15.7
+      - image: cimg/elixir:1.15.7-erlang-26.0.2-node
     steps:
       - checkout
       - run:
