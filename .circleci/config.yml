@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run:
           name: install erlang-dev
-          command: apt-get install erlang-dev
+          command: sudo apt-get install erlang-dev
       - run:
           name: Install Hex locally and fetch copy of rebar
           command: mix do local.hex --force, local.rebar --force
