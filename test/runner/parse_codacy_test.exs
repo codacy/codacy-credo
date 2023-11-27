@@ -115,7 +115,7 @@ defmodule Codacy.Credo.ConfigTest do
         ]
       }
 
-      assert expected_config[:checks] ==
+      assert expected_config ==
                Config.extract_credo_config(%Config{codacy_config: example_json}).credo_config[
                  :checks
                ]
