@@ -74,7 +74,10 @@ defmodule Codacy.Credo.Config do
       },
       strict: true,
       min_priority: -99,
-      checks: extract_checks(patterns)
+      checks: %{
+        enabled: extract_checks(patterns),
+        disabled: []
+      }
     }
 
     config = %__MODULE__{config | credo_config: credo_config}

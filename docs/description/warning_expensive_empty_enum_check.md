@@ -9,3 +9,9 @@ or
 
     list == []
 
+
+For Enum.count/2: Checking if an enum doesn't contain specific elements should
+be done by using
+
+    not Enum.any?(enum, condition)
+

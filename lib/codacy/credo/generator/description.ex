@@ -110,7 +110,15 @@ defmodule Codacy.Credo.Generator.Description do
       |> Enum.map(&explanation_to_empty_description/1)
       |> Enum.concat(params_descriptions)
     else
-      params_descriptions
+      if length(params_descriptions) > length(check.params_names) do
+        Enum.filter(params_descriptions, fn param ->
+          Enum.find(check.params_names, nil, fn name ->
+            to_string(name) == to_string(param.name)
+          end) != nil
+        end)
+      else
+        params_descriptions
+      end
     end
   end
 

@@ -11,23 +11,10 @@ defmodule Codacy.Credo.Generator.Patterns do
   }
 
   defp default_patterns() do
-    [
-      "consistency_line_endings",
-      "consistency_space_around_operators",
-      "consistency_space_in_parentheses",
-      "consistency_tabs_or_spaces",
-      "design_alias_usage",
-      "design_tag_fixme",
-      "design_tag_todo",
-      "readability_max_line_length",
-      "readability_redundant_blank_lines",
-      "readability_semicolons",
-      "readability_space_after_commas",
-      "readability_trailing_blank_line",
-      "readability_trailing_white_space",
-      "refactor_double_boolean_negation",
-      "warning_io_inspect"
-    ]
+    File.cwd!()
+    |> load_default_checks()
+    |> Enum.map(&elem(&1, 0))
+    |> Enum.map(fn check -> check_pattern_id({check}) end)
   end
 
   def generate() do
@@ -48,7 +35,35 @@ defmodule Codacy.Credo.Generator.Patterns do
     Config.config_or_default(search_dir)
     |> case do
       {:ok, config} ->
+        enabled =
+          Map.get(config, :checks)
+          |> Map.get(:enabled)
+
+        disabled =
+          Map.get(config, :checks)
+          |> Map.get(:disabled)
+
+        (enabled ++ disabled)
+        |> Enum.sort()
+
+      {:error, errorMsg} ->
+        raise inspect(errorMsg)
+    end
+  end
+
+  def load_default_checks(dir) do
+    search_dir =
+      if !File.exists?(dir) do
+        File.cwd!()
+      else
+        dir
+      end
+
+    Config.config_or_default(search_dir)
+    |> case do
+      {:ok, config} ->
         Map.get(config, :checks)
+        |> Map.get(:enabled)
         |> Enum.sort()
 
       {:error, errorMsg} ->
@@ -98,9 +113,11 @@ defmodule Codacy.Credo.Generator.Patterns do
   end
 
   def patterns_json(checks) do
+    version = Credo.version()
+
     %{
       name: "credo",
-      version: Credo.version(),
+      version: version,
       patterns: Enum.map(checks, &check_to_pattern/1)
     }
   end
