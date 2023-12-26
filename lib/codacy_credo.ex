@@ -41,7 +41,13 @@ defmodule Codacy.Credo do
   def run(%Config{credo_config: credo_config} = config) do
     File.cd(config.path)
 
-    struct(Execution, credo_config)
+    execution = struct(Execution, credo_config)
+
+    cli_options = %{
+      path: config.path
+    }
+
+    Map.put(execution, :cli_options, cli_options)
     |> ExecutionConfigFiles.start_server()
     |> ExecutionSourceFiles.start_server()
     |> ExecutionIssues.start_server()

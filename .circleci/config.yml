@@ -1,13 +1,13 @@
 version: 2.1
 
 orbs:
-  codacy: codacy/base@2.0.1
-  codacy_plugins_test: codacy/plugins-test@0.15.4
+  codacy: codacy/base@10.11.1
+  codacy_plugins_test: codacy/plugins-test@2.0.4
 
 jobs:
   unit_test:
-    docker:  # run the steps with Docker
-      - image: circleci/elixir:1.10.4
+    docker: # run the steps with Docker
+      - image: cimg/elixir:1.15.7-erlang-26.0.2
     steps:
       - checkout
       - run:
@@ -24,7 +24,6 @@ jobs:
           command: mix test
 
 workflows:
-  version: 2
   compile_test_deploy:
     jobs:
       - codacy/checkout_and_version

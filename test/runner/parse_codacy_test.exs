@@ -58,7 +58,7 @@ defmodule Codacy.Credo.ConfigTest do
       assert expected_checks ==
                Config.extract_credo_config(%Config{codacy_config: example_json}).credo_config[
                  :checks
-               ]
+               ][:enabled]
     end
 
     test "when check module with odd name" do
@@ -82,7 +82,7 @@ defmodule Codacy.Credo.ConfigTest do
       assert expected_checks ==
                Config.extract_credo_config(%Config{codacy_config: example_json}).credo_config[
                  :checks
-               ]
+               ][:enabled]
     end
 
     test "when params provided" do
@@ -118,7 +118,7 @@ defmodule Codacy.Credo.ConfigTest do
       assert expected_config[:checks] ==
                Config.extract_credo_config(%Config{codacy_config: example_json}).credo_config[
                  :checks
-               ]
+               ][:enabled]
     end
   end
 end

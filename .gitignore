@@ -27,3 +27,4 @@ codacy_credo-*.tar
 /target
 /.idea
 /.elixir_ls
+.codacyrc

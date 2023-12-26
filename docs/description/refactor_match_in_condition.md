@@ -6,7 +6,7 @@ While this fine:
     # okay, simple wildcard assignment:
 
     if contents = File.read!("foo.txt") do
-      do_something()
+      do_something(contents)
     end
 
 the following should be avoided, since it mixes a pattern match with a
@@ -15,13 +15,13 @@ condition and do/else blocks.
     # considered too "complex":
 
     if {:ok, contents} = File.read("foo.txt") do
-      do_something()
+      do_something(contents)
     end
 
     # also considered "complex":
 
     if allowed? && ( contents = File.read!("foo.txt") ) do
-      do_something()
+      do_something(contents)
     end
 
 If you want to match for something and execute another block otherwise,

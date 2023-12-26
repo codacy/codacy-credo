@@ -1,4 +1,4 @@
-Alphabetically ordered lists are more easily scannable by the read.
+Alphabetically ordered lists are more easily scannable by the reader.
 
     # preferred
 

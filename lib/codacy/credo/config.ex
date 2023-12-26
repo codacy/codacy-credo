@@ -74,7 +74,10 @@ defmodule Codacy.Credo.Config do
       },
       strict: true,
       min_priority: -99,
-      checks: extract_checks(patterns)
+      checks: %{
+        enabled: extract_checks(patterns),
+        disabled: []
+      }
     }
 
     config = %__MODULE__{config | credo_config: credo_config}
@@ -104,7 +107,8 @@ defmodule Codacy.Credo.Config do
           # the method that does that is private (normalize_check_tuples)
           # the only way of calling it is by calling this method.
           # The second param is required and must be a ConfigFile object.
-          ConfigFile.merge_checks(config, %ConfigFile{checks: nil})
+          # ConfigFile.merge_checks(config, %ConfigFile{checks: nil})
+          config.checks.enabled
 
         {:error, errorMsg} ->
           raise inspect(errorMsg)
