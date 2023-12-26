@@ -10,7 +10,7 @@
   configs: [
     %{
       #
-      # Run any exec using `mix credo -C <name>`. If no exec name is given
+      # Run any config using `mix credo -C <name>`. If no config name is given
       # "default" is used.
       #
       name: "default",
@@ -21,6 +21,10 @@
         excluded: []
       },
       #
+      # Load and configure plugins here:
+      #
+      plugins: [],
+      #
       # If you create your own checks, you must specify the source files for
       # them here, so they can be loaded by Credo before running the analysis.
       #
@@ -29,7 +33,11 @@
       # If you want to enforce a style guide and need a more traditional linting
       # experience, you can change `strict` to `true` below:
       #
-      strict: true,
+      strict: false,
+      #
+      # To modify the timeout for parsing files, change this value:
+      #
+      parse_timeout: 5000,
       #
       # If you want to use uncolored output by default, you can change `color`
       # to `false` below:
@@ -43,18 +51,15 @@
       #
       #     {Credo.Check.Design.DuplicatedCode, false}
       #
-      checks: [
-        # For some checks, you can also set other parameters
-        # You can also customize the exit_status of each check.
-        # If you don't want TODO comments to cause `mix credo` to fail, just
-        # set this value to 0 (zero).
-
-        ## Design checks
-        {Credo.Check.Design.TagTODO, false},
-        {Credo.Check.Design.TagFIXME, []},
-        {Credo.Check.Refactor.NegatedConditionsWithElse, false},
-        {Credo.Check.Readability.TrailingBlankLine, false}
-      ]
+      checks: %{
+        enabled: [
+          {Credo.Check.Design.TagTODO, []},
+          {Credo.Check.Design.TagFIXME, []},
+          {Credo.Check.Readability.TrailingBlankLine, []},
+          {Credo.Check.Refactor.NegatedConditionsWithElse, []}
+        ],
+        disabled: []
+      }
     }
   ]
 }
