@@ -13,8 +13,7 @@ RUN mix release
 
 FROM alpine:3.19
 LABEL Codacy <team@codacy.com>
-RUN apk add --update openssl bash libgcc libstdc++ && \
-    rm -rf /var/cache/*/*
+RUN apk add --no-cache openssl bash libgcc libstdc++
 # Copy Codacy Docs
 COPY docs /docs
 COPY --from=builder /tmp/build/_build/prod/rel/codacy_credo /opt/app/codacy_credo/

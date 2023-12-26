@@ -342,7 +342,7 @@
         {
           "name": "ignore_names",
           "default": [
-            "(\\.\\w+Controller|\\.Endpoint|\\.\\w+Live(\\.\\w+)?|\\.Repo|\\.Router|\\.\\w+Socket|\\.\\w+View|\\.\\w+HTML|\\.\\w+JSON)$"
+            "(\\.\\w+Controller|\\.Endpoint|\\.\\w+Live(\\.\\w+)?|\\.Repo|\\.Router|\\.\\w+Socket|\\.\\w+View|\\.\\w+HTML|\\.\\w+JSON|\\.Telemetry|\\.Layouts|\\.Mailer)$"
           ]
         }
       ],
@@ -505,6 +505,10 @@
         },
         {
           "name": "ignore",
+          "default": []
+        },
+        {
+          "name": "ignore_module_attributes",
           "default": []
         }
       ],
@@ -1018,6 +1022,6 @@
       "enabled": true
     }
   ],
-  "version": "1.7.1-ref.master.c524039+uncommittedchanges",
+  "version": "1.7.2",
   "name": "credo"
 }

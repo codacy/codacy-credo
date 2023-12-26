@@ -181,7 +181,7 @@
     "timeToFix": 5,
     "patternId": "readability_alias_order",
     "title": "Readability Alias Order",
-    "description": "Alphabetically ordered lists are more easily scannable by the read."
+    "description": "Alphabetically ordered lists are more easily scannable by the reader."
   },
   {
     "timeToFix": 5,
@@ -432,6 +432,10 @@
       {
         "description": "List of atoms identifying the module parts which are not checked, and may\ntherefore appear anywhere in the module. Supported values are the same as\nin the `:order` param.\n",
         "name": "ignore"
+      },
+      {
+        "description": "List of atoms identifying the module attributes which are not checked, and may\ntherefore appear anywhere in the module. Useful for custom DSLs that use attributes\nbefore function heads.\n\nFor example, if you provide `~w/trace/a`, all `@trace` attributes will be ignored.\n",
+        "name": "ignore_module_attributes"
       }
     ],
     "title": "Readability Strict Module Layout",
@@ -812,12 +816,12 @@
     "patternId": "warning_missed_metadata_key_in_logger_config",
     "parameters": [
       {
-        "description": "Do not raise an issue for these Logger metadata keys.\n\nBy default, we assume the metadata keys listed under your `console`\nbackend.\n",
+        "description": "Do not raise an issue for these Logger metadata keys.\n\nBy default, we read the metadata keys configured as the current environment's\n`:default_formatter` (or `:console` for older versions of Elixir).\n\nYou can use this parameter to dynamically load the environment/backend you care about,\nvia `.credo.exs` (e.g. reading the `:file_log` config from `config/prod.exs`):\n\n    {Credo.Check.Warning.MissedMetadataKeyInLoggerConfig,\n      [\n        metadata_keys:\n          \"config/prod.exs\"\n          |> Config.Reader.read!()\n          |> get_in([:logger, :file_log, :metadata])\n      ]}\n",
         "name": "metadata_keys"
       }
     ],
     "title": "Warning Missed Metadata Key In Logger Config",
-    "description": "Ensures custom metadata keys are included in logger config"
+    "description": "Ensures custom metadata keys are included in logger config."
   },
   {
     "timeToFix": 5,
