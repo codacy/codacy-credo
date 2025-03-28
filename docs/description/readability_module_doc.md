@@ -29,3 +29,7 @@ explicitness over implicit behaviour, you should "tag" these modules with
     @moduledoc false
 
 to make it clear that there is no intention in documenting it.
+
+Like all `Readability` issues, this one is not a technical concern.
+But you can improve the odds of others reading and liking your code by making
+it easier to follow.

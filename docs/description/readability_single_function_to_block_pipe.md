@@ -18,5 +18,9 @@ The code in this example ...
       _ -> :many
     end
 
-If you want to disallow piping into blocks all together, use
+If you want to disallow piping into blocks altogether, use
 `Credo.Check.Readability.BlockPipe`.
+
+Like all `Readability` issues, this one is not a technical concern.
+But you can improve the odds of others reading and liking your code by making
+it easier to follow.

@@ -1,6 +1,6 @@
 Avoid using custom tags for error reporting from `with` macros.
 
-This code injects placeholder tags such as `:resource` and `:authz` for the purpose of error
+This code injects tuple_tag tags such as `:resource` and `:authz` for the purpose of error
 reporting.
 
     with {:resource, {:ok, resource}} <- {:resource, Resource.fetch(user)},

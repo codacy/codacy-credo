@@ -141,7 +141,7 @@
     "parameters": [
       {
         "description": "",
-        "name": "included"
+        "name": "files"
       }
     ],
     "title": "Design Skip Test Without Comment",
@@ -175,11 +175,17 @@
     "timeToFix": 5,
     "patternId": "readability_alias_as",
     "title": "Readability Alias As",
-    "description": "Aliases which are not completely renamed using the `:as` option are easier to follow."
+    "description": "Aliases can be \"renamed\" using the `:as` option, but that sometimes makes the code more difficult to read."
   },
   {
     "timeToFix": 5,
     "patternId": "readability_alias_order",
+    "parameters": [
+      {
+        "description": "The ordering method to use.\n\nOptions\n- `:alpha` - Alphabetical case-insensitive sorting.\n- `:ascii` - Case-sensitive sorting where upper case characters are ordered\n              before their lower case equivalent.\n",
+        "name": "sort_method"
+      }
+    ],
     "title": "Readability Alias Order",
     "description": "Alphabetically ordered lists are more easily scannable by the reader."
   },
@@ -211,7 +217,7 @@
     "timeToFix": 5,
     "patternId": "readability_impl_true",
     "title": "Readability Impl True",
-    "description": "When implementing behaviour callbacks, `@impl true` indicates that a function implements a callback, but a better way is to note the actual behaviour being implemented, for example `@impl MyBehaviour`. This not only improves readability, but adds extra validation in cases where multiple behaviours are implemented in a single module."
+    "description": "`@impl true` is a shortform so you don't have to write the actual behaviour that is being implemented. This can make code harder to comprehend."
   },
   {
     "timeToFix": 5,
@@ -735,6 +741,12 @@
   },
   {
     "timeToFix": 5,
+    "patternId": "refactor_utc_now_truncate",
+    "title": "Refactor Utc Now Truncate",
+    "description": "`DateTime.utc_now/1` is more efficient than `DateTime.utc_now/0 |> DateTime.truncate/1`."
+  },
+  {
+    "timeToFix": 5,
     "patternId": "refactor_variable_rebinding",
     "parameters": [
       {
@@ -925,7 +937,7 @@
     "parameters": [
       {
         "description": "",
-        "name": "included"
+        "name": "files"
       }
     ],
     "title": "Warning Wrong Test File Extension",
