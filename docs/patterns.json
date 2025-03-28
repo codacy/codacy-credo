@@ -202,10 +202,13 @@
       "patternId": "design_skip_test_without_comment",
       "parameters": [
         {
-          "name": "included",
-          "default": [
-            "test/**/*_test.exs"
-          ]
+          "name": "files",
+          "default": {
+            "included": [
+              "test/**/*_test.exs",
+              "apps/**/test/**/*_test.exs"
+            ]
+          }
         }
       ],
       "category": "CodeStyle",
@@ -244,6 +247,12 @@
     },
     {
       "patternId": "readability_alias_order",
+      "parameters": [
+        {
+          "name": "sort_method",
+          "default": "alpha"
+        }
+      ],
       "category": "CodeStyle",
       "level": "Error",
       "enabled": true
@@ -766,7 +775,8 @@
           "name": "files",
           "default": {
             "included": [
-              "**/*_test.exs"
+              "test/**/*_test.exs",
+              "apps/**/test/**/*_test.exs"
             ]
           }
         }
@@ -814,6 +824,12 @@
       "category": "CodeStyle",
       "level": "Error",
       "enabled": true
+    },
+    {
+      "patternId": "refactor_utc_now_truncate",
+      "category": "CodeStyle",
+      "level": "Error",
+      "enabled": false
     },
     {
       "patternId": "refactor_variable_rebinding",
@@ -1011,10 +1027,13 @@
       "patternId": "warning_wrong_test_file_extension",
       "parameters": [
         {
-          "name": "included",
-          "default": [
-            "test/**/*_test.ex"
-          ]
+          "name": "files",
+          "default": {
+            "included": [
+              "test/**/*_test.ex",
+              "apps/**/test/**/*_test.ex"
+            ]
+          }
         }
       ],
       "category": "ErrorProne",
@@ -1022,6 +1041,6 @@
       "enabled": true
     }
   ],
-  "version": "1.7.2",
+  "version": "1.7.11",
   "name": "credo"
 }

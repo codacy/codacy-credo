@@ -18,6 +18,14 @@ The code in this example ...
 
     defp timex_2(i), do: i * 2
 
+... or use `then/1`:
+
+    def my_fun(foo) do
+      foo
+      |> then(fn i -> i * 2 end)
+      |> my_other_fun()
+    end
+
 Like all `Readability` issues, this one is not a technical concern.
 But you can improve the odds of others reading and liking your code by making
 it easier to follow.

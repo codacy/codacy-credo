@@ -11,7 +11,7 @@ RUN mix deps.get
 RUN mix deps.compile
 RUN mix release
 
-FROM alpine:3.19
+FROM alpine:3.21
 LABEL Codacy <team@codacy.com>
 RUN apk add --no-cache openssl bash libgcc libstdc++
 # Copy Codacy Docs
