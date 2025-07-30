@@ -28,3 +28,6 @@ codacy_credo-*.tar
 /.idea
 /.elixir_ls
 .codacyrc
+
+#Ignore vscode AI rules
+.github/copilot-instructions.md

@@ -15,7 +15,7 @@ defmodule Codacy.Credo.Generator.Description do
   def write_md(check) do
     name = pattern_id(check)
 
-    File.write!("./docs/description/#{name}.md", check.explanation, [:binary])
+    File.write!("./docs/description/#{name}.md", check.explanation(), [:binary])
   end
 
   def generate_json() do
@@ -79,7 +79,7 @@ defmodule Codacy.Credo.Generator.Description do
     "Files should end in a trailing blank line."
   """
   def description_of_check(check) do
-    check.explanations[:check]
+    check.explanations()[:check]
     |> String.split("\n\n")
     |> Enum.at(0)
     |> String.replace("\n", " ")
@@ -94,15 +94,15 @@ defmodule Codacy.Credo.Generator.Description do
   """
   def parameter_descriptions(check) do
     params_descriptions =
-      if length(check.params_names) > 0 && check.explanation_for_params != nil do
-        check.explanation_for_params
+      if length(check.params_names()) > 0 && check.explanation_for_params() != nil do
+        check.explanation_for_params()
         |> Enum.map(&explanation_to_description/1)
       else
         []
       end
 
-    if length(check.params_names) > length(params_descriptions) do
-      Enum.filter(check.params_names, fn name ->
+    if length(check.params_names()) > length(params_descriptions) do
+      Enum.filter(check.params_names(), fn name ->
         Enum.find(params_descriptions, nil, fn x ->
           to_string(x.name) == to_string(name)
         end) == nil
@@ -110,9 +110,9 @@ defmodule Codacy.Credo.Generator.Description do
       |> Enum.map(&explanation_to_empty_description/1)
       |> Enum.concat(params_descriptions)
     else
-      if length(params_descriptions) > length(check.params_names) do
+      if length(params_descriptions) > length(check.params_names()) do
         Enum.filter(params_descriptions, fn param ->
-          Enum.find(check.params_names, nil, fn name ->
+          Enum.find(check.params_names(), nil, fn name ->
             to_string(name) == to_string(param.name)
           end) != nil
         end)
