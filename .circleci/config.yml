@@ -1,13 +1,13 @@
 version: 2.1
 
 orbs:
-  codacy: codacy/base@12.1.5
+  codacy: codacy/base@12.2.0
   codacy_plugins_test: codacy/plugins-test@2.0.11
 
 jobs:
   unit_test:
     docker: # run the steps with Docker
-      - image: cimg/elixir:1.18.2-erlang-26.2.1-node
+      - image: cimg/elixir:1.18.4-erlang-27.2.2-node
     steps:
       - checkout
       - run:

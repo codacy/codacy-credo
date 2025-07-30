@@ -134,10 +134,10 @@ defmodule Codacy.Credo.Generator.Patterns do
   """
   @spec check_to_parameters(tuple) :: [map]
   def check_to_parameters({check, params}) when params != false do
-    check.params_names
+    check.params_names()
     |> Enum.map(
       &(fn name ->
-          format_parameters({name, params[name] || check.params_defaults[name]})
+          format_parameters({name, params[name] || check.params_defaults()[name]})
         end).(&1)
     )
   end
@@ -145,9 +145,9 @@ defmodule Codacy.Credo.Generator.Patterns do
   def check_to_parameters({check, false}), do: check_to_parameters({check})
 
   def check_to_parameters({check}) do
-    check.params_defaults
-    |> Enum.map(&format_parameters/1)
-  end
+    check.params_defaults()
+  |> Enum.map(&format_parameters/1)
+end
 
   defp format_parameters({name, default}) do
     %{
@@ -179,7 +179,7 @@ defmodule Codacy.Credo.Generator.Patterns do
     |> priority_to_level()
   end
 
-  def check_to_level({check, _opts}), do: priority_to_level(check.base_priority)
+  def check_to_level({check, _opts}), do: priority_to_level(check.base_priority())
 
   @doc """
   Convert Credo Priority to Codacy Level
@@ -208,7 +208,7 @@ defmodule Codacy.Credo.Generator.Patterns do
 
     isSecurity = Map.has_key?(@securityPatterns, patternId)
 
-    case elem(check, 0).category do
+    case elem(check, 0).category() do
       :warning when isSecurity -> {"Security", @securityPatterns[patternId]}
       :warning -> {"ErrorProne", nil}
       _ -> {"CodeStyle", nil}
