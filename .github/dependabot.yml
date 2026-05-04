@@ -1,12 +1,14 @@
 version: 2
 updates:
-- package-ecosystem: mix
-  directory: "/"
-  schedule:
-    interval: daily
-    timezone: Europe/Lisbon
-  open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: credo
-    versions:
-    - 1.5.4
+  - package-ecosystem: mix
+    directory: "/"
+    schedule:
+      interval: daily
+      timezone: Europe/Lisbon
+    open-pull-requests-limit: 10
+    ignore:
+      - dependency-name: credo
+        versions:
+          - 1.5.4
+    cooldown:
+      default-days: 7
