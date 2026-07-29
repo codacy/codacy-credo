@@ -241,6 +241,12 @@
     },
     {
       "patternId": "readability_alias_as",
+      "parameters": [
+        {
+          "name": "ignore",
+          "default": []
+        }
+      ],
       "category": "CodeStyle",
       "level": "Error",
       "enabled": false
@@ -352,6 +358,15 @@
           "name": "ignore_names",
           "default": [
             "(\\.\\w+Controller|\\.Endpoint|\\.\\w+Live(\\.\\w+)?|\\.Repo|\\.Router|\\.\\w+Socket|\\.\\w+View|\\.\\w+HTML|\\.\\w+JSON|\\.Telemetry|\\.Layouts|\\.Mailer)$"
+          ]
+        },
+        {
+          "name": "ignore_modules_using",
+          "default": [
+            "Elixir.Credo.Check",
+            "Elixir.Ecto.Schema",
+            "Elixir.Phoenix.LiveView",
+            "\\.Web$"
           ]
         }
       ],
@@ -473,6 +488,10 @@
         {
           "name": "allow_0_arity_functions",
           "default": false
+        },
+        {
+          "name": "allow_blocks",
+          "default": true
         }
       ],
       "category": "CodeStyle",
@@ -608,6 +627,18 @@
       "enabled": true
     },
     {
+      "patternId": "refactor_cond_instead_of_if_else",
+      "parameters": [
+        {
+          "name": "allow_one_liners",
+          "default": false
+        }
+      ],
+      "category": "CodeStyle",
+      "level": "Error",
+      "enabled": false
+    },
+    {
       "patternId": "refactor_cond_statements",
       "category": "CodeStyle",
       "level": "Info",
@@ -705,6 +736,10 @@
         {
           "name": "allow_tagged_tuples",
           "default": false
+        },
+        {
+          "name": "allow_operators",
+          "default": false
         }
       ],
       "category": "CodeStyle",
@@ -730,7 +765,7 @@
           "name": "excluded_paths",
           "default": [
             "/test/",
-            "^test/"
+            "test"
           ]
         }
       ],
@@ -779,6 +814,10 @@
               "apps/**/test/**/*_test.exs"
             ]
           }
+        },
+        {
+          "name": "force_comment_on_explicit_false",
+          "default": false
         }
       ],
       "category": "CodeStyle",
@@ -863,6 +902,12 @@
     },
     {
       "patternId": "warning_dbg",
+      "parameters": [
+        {
+          "name": "allow_captures",
+          "default": false
+        }
+      ],
       "category": "ErrorProne",
       "level": "Error",
       "enabled": true
@@ -963,6 +1008,18 @@
       "enabled": true
     },
     {
+      "patternId": "warning_struct_field_amount",
+      "parameters": [
+        {
+          "name": "max_fields",
+          "default": 31
+        }
+      ],
+      "category": "ErrorProne",
+      "level": "Error",
+      "enabled": true
+    },
+    {
       "subcategory": "CommandInjection",
       "patternId": "warning_unsafe_exec",
       "category": "Security",
@@ -1000,6 +1057,12 @@
       "enabled": true
     },
     {
+      "patternId": "warning_unused_map_operation",
+      "category": "ErrorProne",
+      "level": "Error",
+      "enabled": true
+    },
+    {
       "patternId": "warning_unused_path_operation",
       "category": "ErrorProne",
       "level": "Error",
@@ -1024,14 +1087,17 @@
       "enabled": true
     },
     {
-      "patternId": "warning_wrong_test_file_extension",
+      "patternId": "warning_wrong_test_filename",
       "parameters": [
         {
           "name": "files",
           "default": {
             "included": [
-              "test/**/*_test.ex",
-              "apps/**/test/**/*_test.ex"
+              "test/"
+            ],
+            "excluded": [
+              "test/**/*_test.exs",
+              "apps/**/test/**/*_test.exs"
             ]
           }
         }
@@ -1041,6 +1107,6 @@
       "enabled": true
     }
   ],
-  "version": "1.7.12",
+  "version": "1.7.19",
   "name": "credo"
 }

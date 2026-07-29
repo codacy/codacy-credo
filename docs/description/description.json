@@ -174,6 +174,12 @@
   {
     "timeToFix": 5,
     "patternId": "readability_alias_as",
+    "parameters": [
+      {
+        "description": "List of modules to ignore and allow to `alias Module, as: ...`",
+        "name": "ignore"
+      }
+    ],
     "title": "Readability Alias As",
     "description": "Aliases can be \"renamed\" using the `:as` option, but that sometimes makes the code more difficult to read."
   },
@@ -282,8 +288,12 @@
     "patternId": "readability_module_doc",
     "parameters": [
       {
-        "description": "All modules matching this regex (or list of regexes) will be ignored.",
+        "description": "List of modules to ignore based on their name. Accepts atoms, strings and regexes.",
         "name": "ignore_names"
+      },
+      {
+        "description": "List of modules to ignore based on their `use` declarations. Accepts atoms, strings and regexes.",
+        "name": "ignore_modules_using"
       }
     ],
     "title": "Readability Module Doc",
@@ -404,6 +414,10 @@
       {
         "description": "Allow 0-arity functions",
         "name": "allow_0_arity_functions"
+      },
+      {
+        "description": "Allow block functions/macro like `for`, `if` or `case`",
+        "name": "allow_blocks"
       }
     ],
     "title": "Readability Single Pipe",
@@ -531,6 +545,18 @@
   },
   {
     "timeToFix": 5,
+    "patternId": "refactor_cond_instead_of_if_else",
+    "parameters": [
+      {
+        "description": "Allow one-liner `if/else` expressions (e.g., `if x, do: y, else: z`).",
+        "name": "allow_one_liners"
+      }
+    ],
+    "title": "Refactor Cond Instead Of If Else",
+    "description": "Prefer `cond` over `if/else` blocks."
+  },
+  {
+    "timeToFix": 5,
     "patternId": "refactor_cond_statements",
     "title": "Refactor Cond Statements",
     "description": "Each cond statement should have 3 or more statements including the \"always true\" statement."
@@ -628,6 +654,10 @@
       {
         "description": "Allow tagged tuples in conditions, e.g. `if {:ok, contents} = File.read( \"foo.txt\") do`",
         "name": "allow_tagged_tuples"
+      },
+      {
+        "description": "Allow operators in conditions, e.g. `if contents = File.read(input <> \".txt\") do`",
+        "name": "allow_operators"
       }
     ],
     "title": "Refactor Match In Condition",
@@ -694,6 +724,10 @@
       {
         "description": "",
         "name": "files"
+      },
+      {
+        "description": "Force adding a comment when `async: false` is used.",
+        "name": "force_comment_on_explicit_false"
       }
     ],
     "title": "Refactor Pass Async In Test Cases",
@@ -778,6 +812,12 @@
   {
     "timeToFix": 5,
     "patternId": "warning_dbg",
+    "parameters": [
+      {
+        "description": "Allow using a capture, e.g. `&dbg/1`.",
+        "name": "allow_captures"
+      }
+    ],
     "title": "Warning Dbg",
     "description": "Calls to dbg/0 and dbg/2 should mostly be used during debugging sessions."
   },
@@ -785,7 +825,7 @@
     "timeToFix": 5,
     "patternId": "warning_expensive_empty_enum_check",
     "title": "Warning Expensive Empty Enum Check",
-    "description": "Checking if the size of the enum is `0` can be very expensive, since you are determining the exact count of elements."
+    "description": "Checking if the size of the enum is `0` (or not `0`) can be very expensive, since you are determining the exact count of elements."
   },
   {
     "timeToFix": 5,
@@ -873,6 +913,18 @@
   },
   {
     "timeToFix": 5,
+    "patternId": "warning_struct_field_amount",
+    "parameters": [
+      {
+        "description": "The maximum number of field a struct should be allowed to have.",
+        "name": "max_fields"
+      }
+    ],
+    "title": "Warning Struct Field Amount",
+    "description": "Avoid structs with 32 or more fields."
+  },
+  {
+    "timeToFix": 5,
     "patternId": "warning_unsafe_exec",
     "title": "Warning Unsafe Exec",
     "description": "Spawning external commands can lead to command injection vulnerabilities."
@@ -909,6 +961,12 @@
   },
   {
     "timeToFix": 5,
+    "patternId": "warning_unused_map_operation",
+    "title": "Warning Unused Map Operation",
+    "description": "The result of a call to the Map module's functions has to be used."
+  },
+  {
+    "timeToFix": 5,
     "patternId": "warning_unused_path_operation",
     "title": "Warning Unused Path Operation",
     "description": "The result of a call to the Path module's functions has to be used."
@@ -933,14 +991,14 @@
   },
   {
     "timeToFix": 5,
-    "patternId": "warning_wrong_test_file_extension",
+    "patternId": "warning_wrong_test_filename",
     "parameters": [
       {
         "description": "",
         "name": "files"
       }
     ],
-    "title": "Warning Wrong Test File Extension",
+    "title": "Warning Wrong Test Filename",
     "description": "Invoking mix test from the command line will run the tests in each file matching the pattern `*_test.exs` found in the test directory of your project."
   }
 ]
