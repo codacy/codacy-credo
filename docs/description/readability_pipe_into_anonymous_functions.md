@@ -16,7 +16,7 @@ The code in this example ...
       |> my_other_fun()
     end
 
-    defp timex_2(i), do: i * 2
+    defp times_2(i), do: i * 2
 
 ... or use `then/1`:
 

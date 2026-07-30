@@ -71,6 +71,10 @@ defmodule Codacy.Credo.Generator.PatternsTest do
                    ~S/(\.\w+Controller|\.Endpoint|\.Repo|\.Router|\.\w+Socket|\.\w+View)$/
                  ],
                  name: "ignore_names"
+               },
+               %{
+                 default: [Credo.Check, Ecto.Schema, Phoenix.LiveView, "\\.Web$"],
+                 name: "ignore_modules_using"
                }
              ] ==
                Patterns.check_to_parameters(
