@@ -735,6 +735,18 @@
   },
   {
     "timeToFix": 5,
+    "patternId": "refactor_perceived_complexity",
+    "parameters": [
+      {
+        "description": "The maximum cyclomatic complexity a function should have.",
+        "name": "max_complexity"
+      }
+    ],
+    "title": "Refactor Perceived Complexity",
+    "description": "Cyclomatic complexity is a software complexity metric closely correlated with coding errors."
+  },
+  {
+    "timeToFix": 5,
     "patternId": "refactor_pipe_chain_start",
     "parameters": [
       {
@@ -826,6 +838,18 @@
     "patternId": "warning_expensive_empty_enum_check",
     "title": "Warning Expensive Empty Enum Check",
     "description": "Checking if the size of the enum is `0` (or not `0`) can be very expensive, since you are determining the exact count of elements."
+  },
+  {
+    "timeToFix": 5,
+    "patternId": "warning_forbidden_module",
+    "parameters": [
+      {
+        "description": "List of modules or `{Module, \"Error message\"}` tuples that must not be used.",
+        "name": "modules"
+      }
+    ],
+    "title": "Warning Forbidden Module",
+    "description": "Some modules that are included by a package may be hazardous if used by your application. Use this check to allow these modules in your dependencies but forbid them to be used in your application."
   },
   {
     "timeToFix": 5,
@@ -988,6 +1012,18 @@
     "patternId": "warning_unused_tuple_operation",
     "title": "Warning Unused Tuple Operation",
     "description": "The result of a call to the Tuple module's functions has to be used."
+  },
+  {
+    "timeToFix": 5,
+    "patternId": "warning_wrong_test_file_extension",
+    "parameters": [
+      {
+        "description": "",
+        "name": "files"
+      }
+    ],
+    "title": "Warning Wrong Test File Extension",
+    "description": "Invoking mix test from the command line will run the tests in each file matching the pattern `*_test.exs` found in the test directory of your project."
   },
   {
     "timeToFix": 5,
