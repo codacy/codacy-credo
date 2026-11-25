@@ -25,10 +25,13 @@ defmodule Codacy.Credo.ConfigTest do
         excluded: [~r/\/_build\//, ~r/\/deps\//]
       }
 
-      assert expected_files ==
-               Config.extract_credo_config(%Config{codacy_config: example_json}).credo_config[
-                 :files
-               ]
+      files =
+        Config.extract_credo_config(%Config{codacy_config: example_json}).credo_config[:files]
+
+      assert expected_files.included == files.included
+
+      assert Enum.map(expected_files.excluded, &Regex.source/1) ==
+               Enum.map(files.excluded, &Regex.source/1)
     end
 
     test "ignores non credo tools" do

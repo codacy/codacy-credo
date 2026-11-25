@@ -825,6 +825,18 @@
       "enabled": false
     },
     {
+      "patternId": "refactor_perceived_complexity",
+      "parameters": [
+        {
+          "name": "max_complexity",
+          "default": 9
+        }
+      ],
+      "category": "CodeStyle",
+      "level": "Info",
+      "enabled": false
+    },
+    {
       "patternId": "refactor_pipe_chain_start",
       "parameters": [
         {
@@ -917,6 +929,18 @@
       "category": "ErrorProne",
       "level": "Error",
       "enabled": true
+    },
+    {
+      "patternId": "warning_forbidden_module",
+      "parameters": [
+        {
+          "name": "modules",
+          "default": []
+        }
+      ],
+      "category": "ErrorProne",
+      "level": "Error",
+      "enabled": false
     },
     {
       "subcategory": "CommandInjection",
@@ -1085,6 +1109,23 @@
       "category": "ErrorProne",
       "level": "Error",
       "enabled": true
+    },
+    {
+      "patternId": "warning_wrong_test_file_extension",
+      "parameters": [
+        {
+          "name": "files",
+          "default": {
+            "included": [
+              "test/**/*_test.ex",
+              "apps/**/test/**/*_test.ex"
+            ]
+          }
+        }
+      ],
+      "category": "ErrorProne",
+      "level": "Error",
+      "enabled": false
     },
     {
       "patternId": "warning_wrong_test_filename",

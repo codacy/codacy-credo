@@ -205,7 +205,11 @@
           {Credo.Check.Warning.LeakyEnvironment, []},
           {Credo.Check.Warning.MapGetUnsafePass, []},
           {Credo.Check.Warning.MixEnv, []},
-          {Credo.Check.Warning.UnsafeToAtom, []}
+          {Credo.Check.Warning.UnsafeToAtom, []},
+          {Credo.Check.Refactor.PerceivedComplexity, []},
+          {Credo.Check.Refactor.UtcNowTruncate, []},
+          {Credo.Check.Warning.ForbiddenModule, []},
+          {Credo.Check.Warning.WrongTestFileExtension, []}
 
           # {Credo.Check.Refactor.MapInto, []},
 
